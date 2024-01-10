@@ -1,0 +1,15 @@
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\bin\Debug\net6.0\JSONSerialization01.exe
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\bin\Debug\net6.0\JSONSerialization01.deps.json
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\bin\Debug\net6.0\JSONSerialization01.runtimeconfig.json
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\bin\Debug\net6.0\JSONSerialization01.dll
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\bin\Debug\net6.0\JSONSerialization01.pdb
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.csproj.AssemblyReference.cache
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.GeneratedMSBuildEditorConfig.editorconfig
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.AssemblyInfoInputs.cache
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.AssemblyInfo.cs
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.csproj.CoreCompileInputs.cache
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.dll
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\refint\JSONSerialization01.dll
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.pdb
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\JSONSerialization01.genruntimeconfig.cache
+C:\FPT\PRN221\Project\XmlJsonSerializing\JSONSerialization01\obj\Debug\net6.0\ref\JSONSerialization01.dll

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <Salary>20</Salary>
+    <FirstName>Chung</FirstName>
+    <LastName>Le</LastName>
+    <DoB>1984-09-25T00:00:00</DoB>
+    <Children>
+      <Person>
+        <Salary>0</Salary>
+        <FirstName>An</FirstName>
+        <LastName>Le</LastName>
+        <DoB>2012-11-05T00:00:00</DoB>
+      </Person>
+    </Children>
+  </Person>
+  <Person>
+    <Salary>50</Salary>
+    <FirstName>Thang</FirstName>
+    <LastName>Nguyen</LastName>
+    <DoB>1981-11-01T00:00:00</DoB>
+  </Person>
+  <Person>
+    <Salary>8</Salary>
+    <FirstName>Tam</FirstName>
+    <LastName>Lo</LastName>
+    <DoB>1988-08-08T00:00:00</DoB>
+  </Person>
+</ArrayOfPerson>

@@ -1,0 +1,14 @@
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\bin\Debug\net7.0\DemoXmlSerializer03.exe
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\bin\Debug\net7.0\DemoXmlSerializer03.deps.json
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\bin\Debug\net7.0\DemoXmlSerializer03.runtimeconfig.json
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\bin\Debug\net7.0\DemoXmlSerializer03.dll
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\bin\Debug\net7.0\DemoXmlSerializer03.pdb
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.GeneratedMSBuildEditorConfig.editorconfig
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.AssemblyInfoInputs.cache
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.AssemblyInfo.cs
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.csproj.CoreCompileInputs.cache
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.dll
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\refint\DemoXmlSerializer03.dll
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.pdb
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\DemoXmlSerializer03.genruntimeconfig.cache
+E:\CF\PRN221\Examo1631\W2\XmlJsonSerializing\DemoXmlSerializer03\obj\Debug\net7.0\ref\DemoXmlSerializer03.dll

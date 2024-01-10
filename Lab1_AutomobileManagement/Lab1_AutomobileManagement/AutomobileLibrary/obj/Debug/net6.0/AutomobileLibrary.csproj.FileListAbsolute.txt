@@ -1,0 +1,14 @@
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\bin\Debug\net6.0\AutomobileLibrary.deps.json
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\bin\Debug\net6.0\AutomobileLibrary.dll
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\bin\Debug\net6.0\AutomobileLibrary.pdb
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.csproj.AssemblyReference.cache
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.AssemblyInfoInputs.cache
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.AssemblyInfo.cs
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.csproj.CoreCompileInputs.cache
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.dll
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\refint\AutomobileLibrary.dll
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.pdb
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\ref\AutomobileLibrary.dll
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\bin\Debug\net6.0\AutomobileLibrary.runtimeconfig.json
+C:\FPT\PRN221\Project\AutomobileManagement\AutomobileLibrary\obj\Debug\net6.0\AutomobileLibrary.genruntimeconfig.cache

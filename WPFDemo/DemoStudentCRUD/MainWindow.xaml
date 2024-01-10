@@ -1,0 +1,55 @@
+﻿<Window x:Class="DemoStudentCRUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoStudentCRUD"
+        mc:Ignorable="d"
+        Title="Student" Height="600" Width="600">
+    <Window.Resources>
+        <local:IdToMajor x:Key="IdToMajor"/>
+    </Window.Resources>
+    <Grid Background="Aqua" RenderTransformOrigin="0.492,0.357" Margin="5,10,5,268">
+        <Label Content="StudentId:" HorizontalAlignment="Left" Margin="29,24,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="128,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Height="21"
+                 Text="{Binding StudentId, Mode =OneWay}" DataContext="{Binding SelectedItem, ElementName = ListView}"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="280,24,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="340,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Height="21"
+                 Text="{Binding StudentName, Mode =OneWay}" DataContext="{Binding SelectedItem, ElementName = ListView}"/>
+        <Label Content="Date Of Birth:" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpDob" HorizontalAlignment="Left" Margin="128,57,0,0" VerticalAlignment="Top" Width="147"
+                 SelectedDate="{Binding DateOfBirth, Mode=OneWay}" DataContext="{Binding SelectedItem, ElementName= ListView}"/>
+        <Label Content="Gender:" HorizontalAlignment="Left" Margin="280,55,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="rdoMale"  Content="Male" Width="68" IsChecked="{Binding Male, Mode=OneWay}" DataContext="{Binding SelectedItem, ElementName= ListView}" Margin="342,61,180,221"/>
+            <RadioButton Name="rdoFemale" Content="Female" Width="73" IsChecked="{Binding Female, Mode=OneWay}" DataContext="{Binding SelectedItem, ElementName= ListView}" Margin="414,61,103,216"/>
+        <Label Content="PhoneNumber:" HorizontalAlignment="Left" Margin="29,86,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="128,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Height="21"
+                 Text="{Binding PhoneNumber, Mode =OneWay}" DataContext="{Binding SelectedItem, ElementName = ListView}"/>
+        <Label Content="Major:" HorizontalAlignment="Left" Margin="280,86,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cboMajor" HorizontalAlignment="Left" Margin="342,88,0,0" VerticalAlignment="Top" Width="145"
+                  SelectedItem="{Binding Path=MajorId, Converter={StaticResource IdToMajor}}" DataContext="{Binding SelectedItem, ElementName = ListView}"/>
+        <DockPanel HorizontalAlignment="Center" Height="40" Margin="0,207,0,0" VerticalAlignment="Top" Width="570">
+            <UniformGrid Columns="5">
+                <Button x:Name="btnLoad" Content="Load Data" Click="Load_Data" Width="100" />
+                <Button x:Name="btnDelete" Content="Delete" Click="Delete_Student" Width="100"/>
+                <Button x:Name="btnUpdate" Content="Update" Click="Update_Student"  Width="100"/>
+                <Button x:Name="btnCreate" Content="Create" Click="Create_Student" Width="100"/>
+                <Button x:Name="btnXML" Content="AddXML" Click="btnXML_Click" Width="100"/>
+            </UniformGrid>
+        </DockPanel>
+        <DataGrid x:Name="ListView" Margin="0,308,0,-225" Grid.Row="4" Grid.ColumnSpan="4"
+                  AutoGenerateColumns="False" CanUserResizeColumns="True"
+                  MouseLeftButtonUp="Student_Up" SelectionChanged="ListView_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="50" Header="Id" Binding="{Binding Path=StudentId}"></DataGridTextColumn>
+                <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Path=StudentName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="150" Header="DateOfBirth" Binding="{Binding Path=DateOfBirth, StringFormat=dd/MM/yyyy}"></DataGridTextColumn>
+                <DataGridTextColumn Width="60" Header="Gender" Binding="{Binding Path=Gender}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="PhoneNumber" Binding="{Binding Path=PhoneNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Width="150" Header="Major" Binding="{Binding Path=MajorId, Converter={StaticResource IdToMajor}}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\bin\Debug\net6.0\Data Access.deps.json
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\bin\Debug\net6.0\Data Access.runtimeconfig.json
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\bin\Debug\net6.0\Data Access.dll
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\bin\Debug\net6.0\Data Access.pdb
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.csproj.AssemblyReference.cache
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.AssemblyInfoInputs.cache
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.AssemblyInfo.cs
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.csproj.CoreCompileInputs.cache
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.dll
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\refint\Data Access.dll
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.pdb
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\Data Access.genruntimeconfig.cache
+D:\Ky7\PRNDoc\Ass01Solution\Data Access\obj\Debug\net6.0\ref\Data Access.dll

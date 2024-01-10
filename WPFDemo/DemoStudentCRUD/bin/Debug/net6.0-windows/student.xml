@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StudentList>
+	<Student>
+		<StudentId>0</StudentId>
+		<StudentName>Maria Anders</StudentName>
+		<DateOfBirth>1987-12-12</DateOfBirth>
+		<Gender>Male</Gender>
+		<PhoneNumber>0300074321</PhoneNumber>
+		<MajorId>1</MajorId>
+	</Student>
+</StudentList>
