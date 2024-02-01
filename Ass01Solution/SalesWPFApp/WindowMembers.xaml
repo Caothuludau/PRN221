@@ -1,0 +1,28 @@
+﻿<Window x:Class="SalesWPFApp.WindowMembers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="WindowMembers" Height="450" Width="405">
+    <Grid>
+        <StackPanel Width="400" Height="Auto" Background="#FF39E5E5">
+            <Label Content="Register" FontSize="40" HorizontalAlignment="Center"/>
+            <Label Content="Email*"/>
+            <TextBox x:Name="txtEmail" TextWrapping="Wrap" Width="400" />
+            <Label Content="Company Name*"/>
+            <TextBox x:Name="txtCompanyName" TextWrapping="Wrap" Width="400" />
+            <Label Content="City*"/>
+            <TextBox x:Name="txtCity" TextWrapping="Wrap" Width="400" />
+            <Label Content="Country*"/>
+            <TextBox x:Name="txtCountry" TextWrapping="Wrap" Width="400" />
+            <Label Content="Password*"/>
+            <TextBox x:Name="txtPassword" Width="400" FontFamily="Wingdings"/>
+            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnOrdRefresh" Content="Refresh" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnRefresh_Click" />
+                <Button x:Name="btnOrdAdd" Content="Register" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnRegister_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

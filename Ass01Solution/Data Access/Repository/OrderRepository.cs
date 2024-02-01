@@ -15,4 +15,3 @@ public class OrderRepository : IOrderRepository
 
         public void UpdateOrder(Order Order) => OrderDAO.Instance.Update(Order);
     }
-}

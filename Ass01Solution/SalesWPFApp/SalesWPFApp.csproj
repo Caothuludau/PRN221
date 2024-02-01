@@ -18,4 +18,8 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\BusinessObject\BusinessObject.csproj" />
+	  <ProjectReference Include="..\Data Access\DataAccess.csproj" />
+	</ItemGroup>
 </Project>

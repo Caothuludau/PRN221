@@ -15,4 +15,3 @@ public class OrderDetailRepository : IOrderDetailRepository
 
         public void UpdateOrderDetail(OrderDetail OrderDetail) => OrderDetailDAO.Instance.Update(OrderDetail);
     }
-}

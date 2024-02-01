@@ -1,121 +1,142 @@
 ﻿using BusinessObject;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Runtime.ConstrainedExecution;
 
 namespace DataAccess
 {
-    public class ProductDAO
+    public sealed class ProductDAO
     {
-        //Using Singleton Pattern
         private static ProductDAO? instance = null;
         private static readonly object instanceLock = new object();
         private ProductDAO() { }
+
         public static ProductDAO Instance
         {
             get
             {
-                lock (instanceLock)
+                lock(instanceLock)
                 {
                     if (instance == null)
+                    {
                         instance = new ProductDAO();
+                    }
                 }
                 return instance;
             }
         }
 
-        public IEnumerable<Product> GetProductList()
+        public ICollection<Product> GetProductList()
         {
-            List<Product> Products;
+            var products = new List<Product>();
             try
             {
-                var fStoreDB = new BusinessObject.FStoreContext();
-                Products = fStoreDB.Products.ToList();
+                FStoreContext _context = new FStoreContext();
+                products = _context.Products.ToList();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return Products;
+            return products;
         }
-        public Product GetProductByID(int ProductID)
-        {
-            Product? Product = null;
-            try
-            {
-                var fStoreDB = new FStoreContext();
-                Product = fStoreDB.Products.SingleOrDefault(Product => Product.ProductId == ProductID);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return Product;
-        }
-        public void AddNew(Product Product)
-        {
-            try
-            {
-                Product _Product = GetProductByID(Product.ProductId);
-                if (_Product == null)
-                {
-                    var fStoreDB = new FStoreContext();
-                    fStoreDB.Products.Add(Product);
-                    fStoreDB.SaveChanges();
-                }
-                else
-                {
-                    throw new Exception("The Product is already exist.");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
 
-            }
-        }
-        public void Update(Product Product)
+        public Product? GetProductById(int id)
         {
+            Product? product = null;
             try
             {
-                Product c = GetProductByID(Product.ProductId);
-                if (c != null)
-                {
-                    var fStoreDB = new FStoreContext();
-                    fStoreDB.Entry<Product>(Product).State = EntityState.Modified;
-                    fStoreDB.SaveChanges();
-                }
-                else
-                {
-                    throw new Exception("The Product does not already exist.");
-                }
+                FStoreContext _context = new FStoreContext();
+                product = _context.Products.SingleOrDefault(x => x.ProductId == id);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+            return product;
         }
-        public void Remove(Product Product)
-        {
-            try
-            {
-                Product _Product = GetProductByID(Product.ProductId);
-                if (_Product != null)
-                {
-                    var fStoreDB = new FStoreContext();
-                    fStoreDB.Products.Remove(Product);
-                    fStoreDB.SaveChanges();
-                }
 
+        public ICollection<Product> GetProductByName(string name)
+        {
+            var products = new List<Product>();
+            try
+            {
+                FStoreContext _context = new FStoreContext();
+                products = _context.Products.Where(x => x.ProductName.ToLower().Contains(name.Trim().ToLower()))
+                                            .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return products;
+        }
+
+        public void AddProduct(Product product)
+        {
+            try 
+            {
+                if (this.GetProductById(product.ProductId) == null) 
+                {
+                    FStoreContext _context = new FStoreContext();
+                    _context.Products.Add(product);
+                    _context.SaveChanges();
+                }
                 else
                 {
-                    throw new Exception("The Product does not already exist");
+                    throw new Exception("This product has been available");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+    }
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            try
+            {
+                
+                Product? isProduct = this.GetProductById(product.ProductId);
+                if (isProduct != null) //Check if the input product is available in DB or not
+                {
+                    FStoreContext _context = new FStoreContext();
+                    _context.Entry<Product>(product).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("This product is not avalable yet");
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-        } // end Remove
+        }
+        public void RemoveProduct(Product product) 
+        {
+            
+            try
+            {
+                Product? isProduct = this.GetProductById(product.ProductId);
+                if (isProduct != null) //Check if the input product is available in DB or not
+                {
+                    FStoreContext _context = new FStoreContext();
+                    _context.Products.Remove(product);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("This product is not avalable yet");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }//end class
 }

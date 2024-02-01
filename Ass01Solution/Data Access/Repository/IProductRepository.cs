@@ -12,7 +12,7 @@ namespace DataAccess.Repository
 
         IEnumerable<Product> GetProducts();
 
-        Product GetProductByID(int ProductId);
+        Product? GetProductById(int ProductId);
 
         void InsertProduct(Product Product);
 

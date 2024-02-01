@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using BusinessObject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +17,7 @@ namespace BusinessObject
         {
         }
 
+        public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Member> Members { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
@@ -30,15 +30,25 @@ namespace BusinessObject
                 var ConnectionString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("DefaultConnection");
                 optionsBuilder.UseSqlServer(ConnectionString);
             }
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.ToTable("Category");
+
+                entity.Property(e => e.CategoryId).ValueGeneratedNever();
+
+                entity.Property(e => e.CategoryName)
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Member>(entity =>
             {
                 entity.ToTable("Member");
-
-                entity.Property(e => e.MemberId).ValueGeneratedNever();
 
                 entity.Property(e => e.City)
                     .HasMaxLength(15)
@@ -64,8 +74,6 @@ namespace BusinessObject
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
-
-                entity.Property(e => e.OrderId).ValueGeneratedNever();
 
                 entity.Property(e => e.Freight).HasColumnType("money");
 
@@ -107,8 +115,6 @@ namespace BusinessObject
             {
                 entity.ToTable("Product");
 
-                entity.Property(e => e.ProductId).ValueGeneratedNever();
-
                 entity.Property(e => e.ProductName)
                     .HasMaxLength(40)
                     .IsUnicode(false);
@@ -118,6 +124,12 @@ namespace BusinessObject
                 entity.Property(e => e.Weight)
                     .HasMaxLength(20)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Product_Category");
             });
 
             OnModelCreatingPartial(modelBuilder);

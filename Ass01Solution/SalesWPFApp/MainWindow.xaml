@@ -5,8 +5,98 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SalesWPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="450"
+        Width="800">
     <Grid>
+        <TextBox IsReadOnly="True" x:Name="txtUserInfor" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" Height="16"/>
+        <Button x:Name="btnProdSearch" Content="Search" HorizontalAlignment="Left" Margin="415,16,0,0" VerticalAlignment="Top" Click="btnProdSearch_Click"/>
+        <TextBox x:Name="txtProdSearch" HorizontalAlignment="Left" Margin="462,14,0,0" TextWrapping="Wrap" Text="  by ProductId or ProductName" VerticalAlignment="Top" Width="294" Height="22"/>
+
+
+        <TabControl HorizontalAlignment="Center"
+                    Height="350"
+                    VerticalAlignment="Center"
+                    Width="780">
+            <TabItem Header="Member">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Thần tài đến! Thần tài đến!" FontSize="40" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Order">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Width="400" Height="Auto" Background="#FF39E5E5" HorizontalAlignment="Left">
+                            <Label Content="Product Name"/>
+                            <TextBox TextWrapping="Wrap" IsReadOnly="True" Width="400" x:Name="txtOrdProductName" Text="{Binding ProductName}" DataContext="{Binding SelectedItem,ElementName=lvOrdProduct}"/>
+                            <Label Content="Unit Price"/>
+                            <TextBox x:Name="txtOrdUnitPrice" IsReadOnly="True" Width="400" Text="{Binding UnitPrice}" DataContext="{Binding SelectedItem,ElementName=lvOrdProduct}"/>
+                            <Label Content="Quantity"/>
+                            <TextBox TextWrapping="Wrap" Width="400" x:Name="txtOrdQuantity" TextChanged="txtOrdQuantity_TextChanged"/>
+                            <Label Content="Total Price"/>
+                            <TextBox x:Name="txtOrdTotalPrice" IsReadOnly="True" Width="400" />
+
+                            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnOrdRefresh" Content="Refresh Data" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnOrdRefresh_Click" />
+                                <Button x:Name="btnAddToCart" Content="Add to Cart" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnAddToCart_Click" />
+                                <Button x:Name="btnViewCart" Content="View Cart" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnViewCart_Click" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Width="375" Height="Auto" Background="#FF39E5E5">
+                            <ListView x:Name="lvOrdProduct" Height="Auto" PreviewMouseLeftButtonUp="lvProduct_PreviewMouseLeftButtonUp">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Product Name" Width="155" DisplayMemberBinding="{Binding ProductName}"/>
+                                        <GridViewColumn Header="Weight" Width="70" DisplayMemberBinding="{Binding Weight}" />
+                                        <GridViewColumn Header="Unit Price" Width="70" DisplayMemberBinding="{Binding UnitPrice}"/>
+                                        <GridViewColumn Header="Unit in Stock" Width="70" DisplayMemberBinding="{Binding UnitsInStock}"/>
+                                        <GridViewColumn Header="ProductId" Width="110" DisplayMemberBinding="{Binding ProductId}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Product">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Width="400" Height="Auto" Background="#FF39E5E5" HorizontalAlignment="Left">
+                            <Label Content="Category*"/>
+                            <ComboBox x:Name="cbCategory" DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId" SelectedValue="{Binding CategoryId}" DataContext="{Binding SelectedItem,ElementName=lvProduct}"/>
+                            <Label Content="Product Name*"/>
+                            <TextBox TextWrapping="Wrap" Width="400" x:Name="txtProductName" Text="{Binding ProductName}" DataContext="{Binding SelectedItem,ElementName=lvProduct}"/>
+                            <Label Content="Weight*"/>
+                            <TextBox TextWrapping="Wrap" Width="400" x:Name="txtWeight" Text="{Binding Weight}" DataContext="{Binding SelectedItem,ElementName=lvProduct}"/>
+                            <Label Content="Unit Price*"/>
+                            <TextBox x:Name="txtUnitPrice" TextWrapping="Wrap" Width="400" Text="{Binding UnitPrice}" DataContext="{Binding SelectedItem,ElementName=lvProduct}" />
+                            <Label Content="Unit in Stock*"/>
+                            <TextBox x:Name="txtUnitInStock" TextWrapping="Wrap" Width="400" Text="{Binding UnitsInStock}" DataContext="{Binding SelectedItem,ElementName=lvProduct}" />
+                            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnPrdRefresh" Content="Refresh" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnPrdRefresh_Click" />
+                                <Button x:Name="btnPrdAdd" Content="Add" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnPrdAdd_Click" />
+                                <Button x:Name="btnPrdEdit" Content="Edit" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnPrdEdit_Click" />
+                                <Button x:Name="btnPrdDelete" Content="Delete" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnPrdDelete_Click" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Width="375" Height="Auto" Background="#FF39E5E5">
+                            <ListView x:Name="lvProduct" Height="Auto" PreviewMouseLeftButtonUp="lvProduct_PreviewMouseLeftButtonUp">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Product Name" Width="155" DisplayMemberBinding="{Binding ProductName}"/>
+                                        <GridViewColumn Header="Weight" Width="70" DisplayMemberBinding="{Binding Weight}" />
+                                        <GridViewColumn Header="Unit Price" Width="70" DisplayMemberBinding="{Binding UnitPrice}"/>
+                                        <GridViewColumn Header="Unit in Stock" Width="70" DisplayMemberBinding="{Binding UnitsInStock}"/>
+                                        <GridViewColumn Header="CategoryId" Width="110" DisplayMemberBinding="{Binding CategoryId}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
 </Window>

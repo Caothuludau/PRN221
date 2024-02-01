@@ -1,0 +1,28 @@
+﻿<Window x:Class="SalesWPFApp.WindowProducts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        Title="WindowProducts" Height="450" Width="405">
+    <Grid>
+        <StackPanel Width="400" Height="Auto" Background="#FF39E5E5">
+            <Label Content="Add new Product" FontSize="30"/>
+            <Label Content="Category*"/>
+            <ComboBox x:Name="cbCategory" DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId" SelectedValue="{Binding CategoryId}" DataContext="{Binding SelectedItem,ElementName=lvProduct}"/>
+            <Label Content="Product Name*"/>
+            <TextBox TextWrapping="Wrap" Width="400" x:Name="txtProductName" />
+            <Label Content="Weight*"/>
+            <TextBox TextWrapping="Wrap" Width="400" x:Name="txtWeight" />
+            <Label Content="Unit Price*"/>
+            <TextBox x:Name="txtUnitPrice" TextWrapping="Wrap" Width="400" />
+            <Label Content="Unit in Stock*"/>
+            <TextBox x:Name="txtUnitInStock" TextWrapping="Wrap" Width="400" />
+            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnPrdRefresh" Content="Refresh" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnPrdRefresh_Click" />
+                <Button x:Name="btnPrdAdd" Content="Add" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnPrdAdd_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

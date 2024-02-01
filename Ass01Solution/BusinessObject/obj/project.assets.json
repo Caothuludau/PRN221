@@ -2387,11 +2387,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ky7\\PRNDoc\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+      "projectUniqueName": "D:\\Ky7\\PRNRepo\\PRN221\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
       "projectName": "BusinessObject",
-      "projectPath": "D:\\Ky7\\PRNDoc\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+      "projectPath": "D:\\Ky7\\PRNRepo\\PRN221\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Ky7\\PRNDoc\\Ass01Solution\\BusinessObject\\obj\\",
+      "outputPath": "D:\\Ky7\\PRNRepo\\PRN221\\Ass01Solution\\BusinessObject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

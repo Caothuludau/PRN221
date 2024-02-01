@@ -5,7 +5,7 @@ using System.Runtime.ConstrainedExecution;
 
 namespace DataAccess
 {
-    public class MemberDAO
+    public sealed class MemberDAO
     {
         //Using Singleton Pattern
         private static MemberDAO? instance = null;
@@ -24,65 +24,78 @@ namespace DataAccess
             }
         }
 
-        public IEnumerable<Member> GetMemberList()
+        public ICollection<Member> GetMemberList()
         {
-            List<Member> Members;
-            try
-            {
-                var fStoreDB = new BusinessObject.FStoreContext();
-                Members = fStoreDB.Members.ToList();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return Members;
-        }
-        public Member GetMemberByID(int MemberID)
-        {
-            Member? Member = null;
+            List<Member> members;
             try
             {
                 var fStoreDB = new FStoreContext();
-                Member = fStoreDB.Members.SingleOrDefault(Member => Member.MemberId == MemberID);
+                members = fStoreDB.Members.ToList();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return Member;
+            return members;
         }
-        public void AddNew(Member Member)
+        public Member? GetMemberByID(int memberID)
+        {
+            Member? member = null;
+            try
+            {
+                var fStoreDB = new FStoreContext();
+                member = fStoreDB.Members.SingleOrDefault(Member => Member.MemberId == memberID);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return member;
+        }
+        public Member? GetMemberByEmail(string email)
+        {
+            Member? member = null;
+            try
+            {
+                var fStoreDB = new FStoreContext();
+                member = fStoreDB.Members.SingleOrDefault(Member => Member.Email == email);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return member;
+        }
+        public void AddNew(Member member)
         {
             try
             {
-                Member _Member = GetMemberByID(Member.MemberId);
+                Member? _Member = GetMemberByEmail(member.Email);
                 if (_Member == null)
                 {
                     var fStoreDB = new FStoreContext();
-                    fStoreDB.Members.Add(Member);
+                    fStoreDB.Members.Add(member);
                     fStoreDB.SaveChanges();
                 }
                 else
                 {
-                    throw new Exception("The Member is already exist.");
+                    throw new Exception("The Email is already exist.");
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-
             }
         }
-        public void Update(Member Member)
+        public void Update(Member member)
         {
             try
             {
-                Member c = GetMemberByID(Member.MemberId);
+                Member? c = GetMemberByID(member.MemberId);
                 if (c != null)
                 {
                     var fStoreDB = new FStoreContext();
-                    fStoreDB.Entry<Member>(Member).State = EntityState.Modified;
+                    fStoreDB.Entry<Member>(member).State = EntityState.Modified;
                     fStoreDB.SaveChanges();
                 }
                 else
@@ -95,27 +108,21 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-        public void Remove(Member Member)
+        public bool Login(string email, string password)
         {
+            Member? member = null;
             try
             {
-                Member _Member = GetMemberByID(Member.MemberId);
-                if (_Member != null)
-                {
-                    var fStoreDB = new FStoreContext();
-                    fStoreDB.Members.Remove(Member);
-                    fStoreDB.SaveChanges();
-                }
-
-                else
-                {
-                    throw new Exception("The Member does not already exist");
-                }
+                var fStoreDB = new FStoreContext();
+                member = fStoreDB.Members.SingleOrDefault(Member => Member.Email == email);
+                if (member == null) return false;
+                else if (member.Password == password) return true;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-        } // end Remove
+            return false;
+        }
     }//end class
 }

@@ -8,15 +8,15 @@ using System.Text.Json;
 
 namespace BusinessObject
 {
-    internal class BusinessRules
+    public class BusinessRules
     {
         // Member business rules
         public class MemberRules
         {
-            public static bool IsAdmin(Member member)
+            public static bool IsAdmin(string email, string password)
             {
                 // Read the JSON file into a string
-                string jsonContent = File.ReadAllText("appsettings.json");
+                string jsonContent = File.ReadAllText("D:\\Ky7\\PRNRepo\\PRN221\\Ass01Solution\\BusinessObject\\appsettings.json");
                 JsonDocument jsonDocument = JsonDocument.Parse(jsonContent);
                 JsonElement root = jsonDocument.RootElement;
 
@@ -25,12 +25,12 @@ namespace BusinessObject
                     // Access the properties within "AdminInfo"
                     if (adminInfoElement.TryGetProperty("Email", out JsonElement emailElement))
                     {
-                        if (member.Email.Equals(emailElement.GetString())) return false;
+                        if (!email.Equals(emailElement.GetString())) return false;
                     }
 
                     if (adminInfoElement.TryGetProperty("Password", out JsonElement passwordElement))
                     {
-                        if (member.Password != passwordElement.GetString()) return false;
+                        if (!password.Equals(passwordElement.GetString())) return false;
                     }
                     return true;
                 }
