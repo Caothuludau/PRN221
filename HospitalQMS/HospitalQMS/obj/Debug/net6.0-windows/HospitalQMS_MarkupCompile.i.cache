@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Ky7\PRNRepo\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\
 HospitalQMS
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Ky7\PRNRepo\HospitalQMS\HospitalQMS\App.xaml
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\App.xaml
 11407045341
 
 6-136149600
 194258113564
 MainWindow.xaml;
 
-False
+True
 

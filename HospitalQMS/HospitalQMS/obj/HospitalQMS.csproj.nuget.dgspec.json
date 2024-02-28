@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky7\\PRNRepo\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj": {}
+    "D:\\Ky7\\PRNRepo\\PRN221\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj": {}
   },
   "projects": {
-    "D:\\Ky7\\PRNRepo\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj": {
+    "D:\\Ky7\\PRNRepo\\PRN221\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky7\\PRNRepo\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj",
+        "projectUniqueName": "D:\\Ky7\\PRNRepo\\PRN221\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj",
         "projectName": "HospitalQMS",
-        "projectPath": "D:\\Ky7\\PRNRepo\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj",
+        "projectPath": "D:\\Ky7\\PRNRepo\\PRN221\\HospitalQMS\\HospitalQMS\\HospitalQMS.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky7\\PRNRepo\\HospitalQMS\\HospitalQMS\\obj\\",
+        "outputPath": "D:\\Ky7\\PRNRepo\\PRN221\\HospitalQMS\\HospitalQMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

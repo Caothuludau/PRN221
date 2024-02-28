@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalQMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="DisplayWindow" Height="Auto" Width="Auto" SizeToContent="Height" >
+    <Viewbox Stretch="Fill" StretchDirection="Both">
+        <Grid>
+        <Grid HorizontalAlignment="Center" Height="139" VerticalAlignment="Top" Width="840">
+            <Label x:Name="txtHospitalInformation" FontSize="20" Content="Thông tin phòng khám và bác sĩ" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="txtNote" FontSize="20" Content="Bệnh nhân vui lòng ngồi ghế đợi trước phòng khám" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="txtTopic" Content="MỜI BỆNH NHÂN CÓ SỐ" FontSize="40" HorizontalAlignment="Left" Margin="186,74,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Height="470" VerticalAlignment="Top" Width="840">
+            <Grid HorizontalAlignment="Left" Height="310" Margin="0,139,0,0" VerticalAlignment="Top" Width="415">
+                <Label Content="VÀO PHÒNG" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <ListView x:Name="lvInRoom" Width="415" Margin="0,42,0,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="STT" Width="40" DisplayMemberBinding="{Binding TicketID}"/>
+                            <GridViewColumn Header="Họ và tên" Width="230" DisplayMemberBinding="{Binding PName}" />
+                            <GridViewColumn Header="Năm sinh" Width="70" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                            <GridViewColumn Header="Ưu tiên" Width="70" DisplayMemberBinding="{Binding PriorityType}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="310" Margin="420,139,0,0" VerticalAlignment="Top" Width="415">
+                <Label Content="CHUẨN BỊ" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <ListView x:Name="lvOutRoom" Width="415" Margin="0,42,0,0">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="STT" Width="40" DisplayMemberBinding="{Binding TicketID}"/>
+                            <GridViewColumn Header="Họ và tên" Width="230" DisplayMemberBinding="{Binding PName}" />
+                            <GridViewColumn Header="Năm sinh" Width="70" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                            <GridViewColumn Header="Ưu tiên" Width="70" DisplayMemberBinding="{Binding PriorityType}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Grid>
     </Grid>
+    </Viewbox> 
 </Window>
