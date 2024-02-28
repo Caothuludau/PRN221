@@ -1,0 +1,15 @@
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\bin\Debug\net6.0\ClientApp.exe
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\bin\Debug\net6.0\ClientApp.deps.json
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\bin\Debug\net6.0\ClientApp.runtimeconfig.json
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\bin\Debug\net6.0\ClientApp.dll
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\bin\Debug\net6.0\ClientApp.pdb
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.AssemblyInfoInputs.cache
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.AssemblyInfo.cs
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.csproj.CoreCompileInputs.cache
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.sourcelink.json
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.dll
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\refint\ClientApp.dll
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.pdb
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ClientApp.genruntimeconfig.cache
+D:\Ky7\PRNRepo\DemoTCPService\ClientApp\obj\Debug\net6.0\ref\ClientApp.dll
