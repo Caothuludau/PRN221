@@ -1,0 +1,20 @@
+﻿<Window x:Class="HospitalQMS.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalQMS"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="250" Width="400">
+    <Grid>
+        <Label Content="Đăng nhập" FontSize="30" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mã nhân viên:" HorizontalAlignment="Left" Margin="61,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtStaffID" HorizontalAlignment="Left" Margin="158,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
+        <Label Content="Mật khẩu:" HorizontalAlignment="Left" Margin="83,116,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="158,121,0,0" VerticalAlignment="Top" Width="162"/>
+        <Button x:Name="btnLogin" Content="Đăng nhập" HorizontalAlignment="Left" Margin="220,165,0,0" VerticalAlignment="Top" Width="70" Height="30"
+                Click="btnLogin_Click"/>
+        <Button x:Name="btnSignup" Content="Đăng ký" HorizontalAlignment="Left" Margin="122,165,0,0" VerticalAlignment="Top" Width="70" Height="30"
+                Click="btnSignup_Click"/>
+    </Grid>
+</Window>

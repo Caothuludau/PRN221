@@ -175,3 +175,17 @@ VALUES
 (N'Đỗ Minh Tuấn', '2020-03-02', 'Hospitalized', 5, 25),
 (N'Lê Thị Kim', '1977-07-29', 'Hospitalized', 7, 28),
 (N'Nguyễn Văn Hoàng', '1955-11-14', 'Hospitalized', 8, 31);
+
+
+--select * from Ticket
+--ALTER TABLE Ticket
+--ADD RoomID INT;
+
+--ALTER TABLE Ticket
+--ADD CONSTRAINT FK_Ticket_RoomID FOREIGN KEY (RoomID) REFERENCES Room(RoomID);
+
+--ALTER TABLE Patient
+--DROP CONSTRAINT FK_Patient_Room;
+-- Drop the RoomID column
+--ALTER TABLE Patient
+--DROP COLUMN RoomID;
