@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HospitalQMS.DAO;
+using HospitalQMS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +36,39 @@ namespace HospitalQMS
             {
                 //Open Manage Window for each case of StaffType
                 MessageBox.Show("SS.", "Đăng nhập SS");
-            }
+                try
+                {
+                    MedicalStaffDAO medicalStaffDAO = new MedicalStaffDAO();
+                    MedicalStaff? ms = medicalStaffDAO.GetMedicalStaffById(Int32.Parse(staffId));
+                    int? staffType = -1;
+                    if (ms != null && ms.StaffTypeId != null) staffType = ms.StaffTypeId;
+
+                    if (staffType == 1 || staffType == 2) //Doctor = 1, Nurse = 2
+                    {
+                        DoctorWindow doctorWindow = new DoctorWindow(ms); //ms will not null
+                        doctorWindow.Show();
+                        this.Close();
+                    }
+                    else if (staffType == 3) //Admin = 3
+                    {
+
+                    }
+                    else if (staffType == 4) //Tech = 4
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài khoản của bạn chưa đủ quyền truy cập vào hệ thống.", "Không đủ quyền hạn");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            
+            }   
             else
             {
                 //Display Error Message
@@ -44,7 +78,9 @@ namespace HospitalQMS
 
         private void btnSignup_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Password.HashPassword(txtStaffID.Text));
+            SigninWindow signinWindow = new SigninWindow();
+            signinWindow.Show();
+            this.Close();
         }
     }
 }

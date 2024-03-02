@@ -62,3 +62,7 @@ D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\runtimes\
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\HospitalQMS.csproj.AssemblyReference.cache
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\HospitalQMS.csproj.CopyComplete
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\SigninWindow.g.cs
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\SigninWindow.baml
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\DoctorWindow.g.cs
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\DoctorWindow.baml

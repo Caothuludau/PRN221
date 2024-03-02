@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\App.xaml
-2-1087892428
+4-1755145023
 
-20-616074995
+231896523183
 220922856339
-DisplayWindow.xaml;LoginWindow.xaml;
+DisplayWindow.xaml;DoctorWindow.xaml;LoginWindow.xaml;SigninWindow.xaml;
 
-False
+True
 
