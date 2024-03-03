@@ -28,6 +28,16 @@ namespace HospitalQMS
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+
+            /*MedicalStaffDAO medicalStaf = new MedicalStaffDAO();
+            MedicalStaff? msao = medicalStaf.GetMedicalStaffById(176726);
+            DoctorWindow doctorWindo = new DoctorWindow(msao); //ms will not null
+            doctorWindo.Show();
+            this.Close();*/
+            AdminWindow adminWindow1 = new AdminWindow();
+            adminWindow1.Show();
+            this.Close();
+
             string staffId = txtStaffID.Text;
             string password = txtPassword.Password;
 
@@ -49,9 +59,11 @@ namespace HospitalQMS
                         doctorWindow.Show();
                         this.Close();
                     }
-                    else if (staffType == 3) //Admin = 3
+                    else if (staffType == 3) //Admin Staff = 3
                     {
-
+                        AdminWindow adminWindow = new AdminWindow();
+                        adminWindow.Show();
+                        this.Close();
                     }
                     else if (staffType == 4) //Tech = 4
                     {

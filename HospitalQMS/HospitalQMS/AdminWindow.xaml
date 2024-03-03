@@ -1,0 +1,57 @@
+﻿<Window x:Class="HospitalQMS.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalQMS"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Center" Height="40" Margin="0,0,0,0" VerticalAlignment="Top" Width="800">
+            <TextBlock x:Name="txtUsername" HorizontalAlignment="Left" Margin="414,0,0,0" TextWrapping="Wrap" Text="Người dùng: " VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Height="380" Margin="0,45,0,0" VerticalAlignment="Top" Width="800">
+            <TabControl HorizontalAlignment="Center" Height="380" VerticalAlignment="Center" Width="800">
+                <TabItem x:Name="tabDSBN" Header="Danh sách Bệnh nhân">
+
+                </TabItem>
+                <TabItem x:Name="tabPatient" Header="Quản lý Danh sách Bệnh nhân">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Width="400" Height="Auto" Background="#FF39E5E5" HorizontalAlignment="Left">
+                                <Label Content="Category*"/>
+                                <ComboBox x:Name="cbCategory" DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId" SelectedValue="{Binding CategoryId}" DataContext="{Binding SelectedItem,ElementName=lvProduct}"/>
+                                <Label Content="Search*"/>
+                                <TextBox x:Name="txtSearch" TextWrapping="Wrap" Width="400"/>
+                                <Label Content="Weight*"/>
+                                <TextBox TextWrapping="Wrap" Width="400" x:Name="txtWeight" Text="{Binding Weight}" DataContext="{Binding SelectedItem,ElementName=lvProduct}"/>
+                                <Label Content="Unit Price*"/>
+                                <TextBox x:Name="txtUnitPrice" TextWrapping="Wrap" Width="400" Text="{Binding UnitPrice}" DataContext="{Binding SelectedItem,ElementName=lvProduct}" />
+                                <Label Content="Unit in Stock*"/>
+                                <TextBox x:Name="txtUnitInStock" TextWrapping="Wrap" Width="400" Text="{Binding UnitsInStock}" DataContext="{Binding SelectedItem,ElementName=lvProduct}" />
+                                <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="btnSearch" Content="Search" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnSearch_Click" />
+                                    <Button x:Name="btnPrdAdd" Content="Add" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" />
+                                    <Button x:Name="btnPrdEdit" Content="Edit" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" />
+                                    <Button x:Name="btnPrdDelete" Content="Delete" Width="90" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Width="375" Height="Auto" Background="#FF39E5E5">
+                                <ListView x:Name="lvPatient" Height="Auto">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Name" Width="155" DisplayMemberBinding="{Binding Pname}"/>
+                                            <GridViewColumn Header="DOB" Width="70" DisplayMemberBinding="{Binding DateOfBirth}" />
+                                            <GridViewColumn Header="Status" Width="70" DisplayMemberBinding="{Binding Status}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

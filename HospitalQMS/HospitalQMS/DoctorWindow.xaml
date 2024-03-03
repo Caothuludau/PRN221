@@ -14,10 +14,26 @@
             <TabControl HorizontalAlignment="Center" Height="380" VerticalAlignment="Center" Width="800">
                 <TabItem x:Name="tabLocation" Header="Chọn Địa điểm khám">
                     <Grid Background="#FFE5E5E5">
-                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                        <WrapPanel Name="wrapPanel" Orientation="Horizontal"/>
-                    </ScrollViewer>
-                        </Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Department WrapPanel -->
+                        <Label FontSize="16" HorizontalAlignment="Center" Content="Chọn Tòa nhà" Grid.Column="0"/>
+                        <ScrollViewer Margin="10,30,0,150" Grid.Column="0" VerticalScrollBarVisibility="Auto">
+                            <WrapPanel Name="wpDepartment" Orientation="Horizontal"/>
+                        </ScrollViewer>
+                        <Label  FontSize="16" Margin="55,250,45,0" Content="Chọn Tầng:" Grid.Column="0"/>
+                        <ComboBox x:Name="cbFloor" HorizontalAlignment="Left" Margin="171,256,0,0" VerticalAlignment="Top" Width="120" Grid.Column="0"/>
+                        
+                        
+                        <!-- Room WrapPanel -->
+                        <Label  FontSize="16" HorizontalAlignment="Center" Content="Chọn Phòng" Grid.Column="1"/>
+                        <ScrollViewer Margin="10,30,0,0" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                            <WrapPanel Name="wpRoom" Orientation="Horizontal"/>
+                        </ScrollViewer>
+                    </Grid>
                 </TabItem>
                 <TabItem x:Name="tabPatient" Header="Quản lý Danh sách Bệnh nhân" IsEnabled="False">
                     <Grid Background="#FFE5E5E5"/>

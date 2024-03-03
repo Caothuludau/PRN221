@@ -161,7 +161,7 @@ VALUES (N'Nguyễn Văn Hoàng', '1955-11-14', N'Nam', N'Bệnh đau thắt ng�
 --select * from MedicalRecord
 --select * from PriorityType
 --select * from Patient
---Status for Patient: (Nhập viện - Hospitalized, Đã khám - Examined, Hủy khám - Canceled examination)
+--Status for Patient: (Nhập viện - Hospitalized, Chờ khám - Waiting, Đang khám - Examining, Đã khám - Examined, Hủy khám - Canceled examination, Chuyển phòng - Change Room)
 insert into Patient (PName, DateOfBirth, [Status], PriorityTypeID, MedicalRecordID) 
 VALUES 
 (N'Nguyễn Phú Lương', '2003-03-13', 'Hospitalized', 7, 1),
@@ -189,3 +189,20 @@ VALUES
 -- Drop the RoomID column
 --ALTER TABLE Patient
 --DROP COLUMN RoomID;
+
+--ALTER TABLE MedicalStaff
+--ALTER COLUMN Password nchar(100);
+
+
+--Status for MedicalStaff: Available - Có mặt, Absent - Vắng mặt
+--select * from MedicalStaff
+--select * from StaffType
+--select * from Specialty
+
+
+--insert into MedicalStaff (StaffID, MSName, Title, [Status], StaffTypeID, SpecialtyID, [Password])
+--values (176750, N'Nguyễn Phú Lương', 'Mr.', 'Available', 1, 7, '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92')
+insert into MedicalStaff (StaffID, MSName, Title, [Status], StaffTypeID, SpecialtyID, [Password])
+values (176726, N'Nguyễn Ngọc Hoàng San', 'Mr.', 'Available', 3, NULL, NULL)
+
+

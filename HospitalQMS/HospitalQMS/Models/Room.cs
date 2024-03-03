@@ -17,6 +17,7 @@ namespace HospitalQMS.Models
         public int? SpecialtyId { get; set; }
         public int? DepartmentId { get; set; }
         public string? RoomCode { get; set; }
+        public int? Floor { get; set; }
 
         public virtual Department? Department { get; set; }
         public virtual Specialty? Specialty { get; set; }

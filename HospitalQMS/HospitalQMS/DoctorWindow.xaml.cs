@@ -36,23 +36,70 @@ namespace HospitalQMS
 
             //Display available departments
             DepartmentDAO departmentDAO = new DepartmentDAO();
-
             foreach (var department in departmentDAO.GetDepartmentList())
             {
                 Button button = new Button();
-                button.Content = "Display " + department.Dname.Trim();
+                button.Height = 50;
+                button.Width = 70;
+                button.Content = department.Dname.Trim();
                 button.Click += (sender, e) =>
                 {
-                    MessageBox.Show(department.Description);
+                    DisplayRoom(department);
                 };
 
                 // Add the button to the wrap panel
-                wrapPanel.Children.Add(button);
+                wpDepartment.Children.Add(button);
 
                 // Set margin to create space between buttons
-                button.Margin = new Thickness(5);
+                button.Margin = new Thickness(10);
             }
         }
 
+        private void DisplayRoom(Department d)
+        {
+            
+            RoomDAO roomDAO = new RoomDAO();
+            ICollection<Room> roomList = roomDAO.GetRoomListOfDepartment(d);
+            //Set floor for cbFloor
+            // Extract unique floor numbers
+            HashSet<int> floorSet = new HashSet<int>();
+            foreach (Room room in roomList)
+            {
+                floorSet.Add(room.Floor.Value);
+            }
+            // Convert the HashSet to a sorted list of floor numbers
+            List<int> floorList = new List<int>(floorSet);
+            floorList.Sort();
+
+            // Set the ItemsSource of the ComboBox to the list of floor numbers
+            cbFloor.ItemsSource = floorList;
+
+
+            // Clear current content
+            wpRoom.Children.Clear();
+            foreach (var room in roomList)
+            {
+                Button button = new Button();   
+                button.Height = 50;
+                button.Width = 350;
+                button.HorizontalContentAlignment = HorizontalAlignment.Left;
+                button.Content = "   " + room.RoomCode.Trim() + "\n   " + room.Rname.Trim();
+                button.Click += (sender, e) =>
+                {
+                    DisplayQueueTab();
+                };
+
+                // Add the button to the wrap panel
+                wpRoom.Children.Add(button);
+
+                // Set margin to create space between buttons
+                button.Margin = new Thickness(10);
+            }
+        }
+
+        private void DisplayQueueTab()
+        {
+            tabPatient.IsSelected = true;
+        }
     }
 }

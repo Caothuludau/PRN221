@@ -66,3 +66,5 @@ D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\SigninWin
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\SigninWindow.baml
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\DoctorWindow.g.cs
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\DoctorWindow.baml
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\AdminWindow.g.cs
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\AdminWindow.baml
