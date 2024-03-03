@@ -27,26 +27,5 @@ namespace HospitalQMS
             InitializeComponent();
         }
 
-
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            string searchContent = txtSearch.Text;
-            PatientDAO patientDAO = new PatientDAO();
-            ICollection<Patient> list = new List<Patient>();
-            if (Int32.TryParse(searchContent, out int num))
-            {
-                Patient pat = patientDAO.GetPatientById(num);
-                if (pat != null)
-                {
-                    list.Add(pat);
-                }
-            }
-            else
-            {
-                list = patientDAO.GetPatientByName(searchContent);
-            }
-
-            lvPatient.ItemsSource = list;
-        }
     }
 }

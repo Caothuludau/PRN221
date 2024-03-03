@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\App.xaml
-51649364170
+7461988442
 
-26-1052135638
+28-1420690385
 220922856339
-AdminWindow.xaml;DisplayWindow.xaml;DoctorWindow.xaml;LoginWindow.xaml;SigninWindow.xaml;
+AdminWindow.xaml;DisplayWindow.xaml;DoctorWindow.xaml;GetPatientWindow.xaml;LoginWindow.xaml;MedicalRecordWindow.xaml;SigninWindow.xaml;
 
 True
 

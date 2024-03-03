@@ -16,7 +16,10 @@ namespace HospitalQMS.DAO
             try
             {
                 HospitalQMSContext _context = new HospitalQMSContext();
-                obj = _context.Patients.SingleOrDefault(x => x.PatientId == id);
+                obj = _context.Patients
+                              .Include(p => p.MedicalRecord)  // Eager loading for MedicalRecord
+                              .Include(p => p.PriorityType)   // Eager loading for PriorityType
+                              .SingleOrDefault(x => x.PatientId == id);
             }
             catch (Exception ex)
             {
@@ -32,6 +35,8 @@ namespace HospitalQMS.DAO
                 HospitalQMSContext _context = new HospitalQMSContext();
                 patients = _context.Patients
                             .Where(x => x.Pname.ToLower().Contains(name.Trim().ToLower()))
+                            .Include(p => p.MedicalRecord)  // Eager loading for MedicalRecord
+                            .Include(p => p.PriorityType)   // Eager loading for PriorityType
                             .ToList();
             }
             catch (Exception ex)

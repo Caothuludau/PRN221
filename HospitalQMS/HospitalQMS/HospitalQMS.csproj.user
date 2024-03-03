@@ -13,7 +13,13 @@
     <Compile Update="DoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GetPatientWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SigninWindow.xaml.cs">
@@ -27,10 +33,16 @@
     <Page Update="DoctorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GetPatientWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DisplayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SigninWindow.xaml">
