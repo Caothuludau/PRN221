@@ -133,7 +133,7 @@ namespace HospitalQMS {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalQMS;V1.0.0.0;component/getpatientwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalQMS;component/getpatientwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\GetPatientWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

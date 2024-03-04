@@ -65,7 +65,7 @@ namespace HospitalQMS
             HashSet<int> floorSet = new HashSet<int>();
             foreach (Room room in roomList)
             {
-                floorSet.Add(room.Floor.Value);
+                floorSet.Add(room.Floor);
             }
             // Convert the HashSet to a sorted list of floor numbers
             List<int> floorList = new List<int>(floorSet);

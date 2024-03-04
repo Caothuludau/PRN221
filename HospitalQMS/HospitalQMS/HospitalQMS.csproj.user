@@ -13,6 +13,9 @@
     <Compile Update="DoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GenderGridUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GetPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,12 +28,18 @@
     <Compile Update="SigninWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControl1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AdminWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DoctorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GenderGridUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GetPatientWindow.xaml">
@@ -46,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SigninWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControl1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

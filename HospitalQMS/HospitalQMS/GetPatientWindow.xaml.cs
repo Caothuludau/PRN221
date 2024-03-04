@@ -33,6 +33,16 @@ namespace HospitalQMS
 
         private void btnHSBA_Click(object sender, RoutedEventArgs e)
         {
+            Patient selectedP = lvPatient.SelectedItem as Patient;
+            if (selectedP != null)
+            {
+                MedicalRecordWindow mrw = new MedicalRecordWindow(selectedP);
+                mrw.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a patient first.");
+            }
 
         }
 

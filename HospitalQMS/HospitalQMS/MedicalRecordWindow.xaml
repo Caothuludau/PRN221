@@ -5,8 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HospitalQMS"
         mc:Ignorable="d"
-        Title="MedicalRecordWindow" Height="600" Width="800">
+        Title="MedicalRecordWindow" Height="800" Width="600">
     <Grid>
-        
+        <Grid>
+            <Label FontSize="20" Content="Tóm tắt hồ sơ bệnh án" HorizontalAlignment="Center" />
+            <Grid Margin="10,50,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Hình thức điều trị:" Grid.Column="0"  Grid.Row="0"/>
+                <Label Content="1. Họ và tên:" Grid.Column="0"  Grid.Row="1"/>
+                <Label Content="2. Ngày sinh (tháng/ngày/năm):" Grid.Column="0" Grid.Row="2"/>
+                <Label Content="3. Giới tính:" Grid.Column="0" Grid.Row="3"/>
+                <Label Content="4. Dân tộc:" Grid.Column="0" Grid.Row="4"/>
+                <Label Content="5. Mã số BHXH/ Thẻ BHYT số:" Grid.Column="0" Grid.Row="5"/>
+                <Label Content="6. Nghề nghiệp:" Grid.Column="0" Grid.Row="6"/>
+                <Label Content="7. Cơ quan/Đơn vị công tác:" Grid.Column="0" Grid.Row="7"/>
+                <Label Content="8. Địa chỉ:" Grid.Column="0" Grid.Row="8"/>
+                <Label Content="9. Ngày vào viện:" Grid.Column="0" Grid.Row="9"/>
+                <Label Content="10. Ngày ra viện:" Grid.Column="0" Grid.Row="10"/>
+                <Label Content="11. Chẩn đoán:" Grid.Column="0" Grid.Row="11"/>
+                <Label Content="12. Ghi chú:" Grid.Column="0" Grid.Row="12"/>
+
+                
+                <local:GenderGridUC  Grid.Column="1" Grid.Row="0"/>
+                
+                <TextBox x:Name="txtName" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="1"/>
+                <DatePicker x:Name="dpDOB" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="2"/>
+                <TextBox x:Name="txtGender" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="3"/>
+                <TextBox x:Name="txtEthnicity" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="4"/>
+                <TextBox x:Name="txtBHYT" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="5"/>
+                <TextBox x:Name="txtOccupation" TextWrapping="Wrap" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="6"/>
+                <TextBox x:Name="txtCompany" TextWrapping="Wrap" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="7"/>
+                <TextBox x:Name="txtAddress" TextWrapping="Wrap" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="8"/>
+                <DatePicker x:Name="dpAdmitted" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="9"/>
+                <DatePicker x:Name="dpDischarged" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="10"/>
+                <TextBox x:Name="txtDiagnosis" TextWrapping="Wrap" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="11"/>
+                <TextBox x:Name="txtNote" TextWrapping="Wrap" IsEnabled="False"
+                         Grid.Column="1" Grid.Row="12"/>
+            </Grid>
+        </Grid>
+
+
     </Grid>
 </Window>

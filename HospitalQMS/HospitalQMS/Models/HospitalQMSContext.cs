@@ -35,7 +35,6 @@ namespace HospitalQMS.Models
                 var ConnectionString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("DefaultConnection");
                 optionsBuilder.UseSqlServer(ConnectionString);
             }
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -66,6 +65,14 @@ namespace HospitalQMS.Models
                     .HasColumnName("MedicalRecordID")
                     .HasDefaultValueSql("(NEXT VALUE FOR [MedicalRecordID_Sequence])");
 
+                entity.Property(e => e.Address)
+                    .HasMaxLength(200)
+                    .IsFixedLength();
+
+                entity.Property(e => e.Company)
+                    .HasMaxLength(200)
+                    .IsFixedLength();
+
                 entity.Property(e => e.DateAdmitted).HasColumnType("date");
 
                 entity.Property(e => e.DateDischarged).HasColumnType("date");
@@ -74,6 +81,10 @@ namespace HospitalQMS.Models
 
                 entity.Property(e => e.Diagnosis)
                     .HasMaxLength(100)
+                    .IsFixedLength();
+
+                entity.Property(e => e.Ethnicity)
+                    .HasMaxLength(200)
                     .IsFixedLength();
 
                 entity.Property(e => e.File)
@@ -92,8 +103,16 @@ namespace HospitalQMS.Models
                     .HasMaxLength(100)
                     .IsFixedLength();
 
+                entity.Property(e => e.Occupation)
+                    .HasMaxLength(200)
+                    .IsFixedLength();
+
                 entity.Property(e => e.SocialInsuranceCode)
                     .HasMaxLength(20)
+                    .IsFixedLength();
+
+                entity.Property(e => e.TreatmentForm)
+                    .HasMaxLength(200)
                     .IsFixedLength();
             });
 

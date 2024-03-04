@@ -80,15 +80,18 @@ insert into Department values
 -- B3 - 3
 -- B6 - 6
 -- Mã phòng = Department_Trái/Phải+Tầng_STT
-insert into Room  (RName, Status, SpecialtyID, DepartmentID, RoomCode)
+insert into Room  (RName, Status, SpecialtyID, DepartmentID, RoomCode, [Floor])
 values 
-(N'Phòng Chụp X Quang', 'Active', 7, 3, 'B3_L1_1'),
-(N'Phòng Chụp CT', 'Active', 7, 3, 'B3_L1_2'),
-(N'Phòng Chẩn đoán, Xét nghiệm nhanh', 'Active', 8, 3, 'B3_L2_1'),
-(N'Phòng Khám nhi', 'Active', 5, 6, 'B6_R1_1'),
-(N'Phóng Khám sản phụ', 'Active', 5, 6, 'B6_R1_2')
+(N'Phòng Chụp X Quang', 'Active', 7, 3, 'B3_L1_1', 1),
+(N'Phòng Chụp CT', 'Active', 7, 3, 'B3_L1_2', 1),
+(N'Phòng Chẩn đoán, Xét nghiệm nhanh', 'Active', 8, 3, 'B3_L2_1', 2),
+(N'Phòng Khám nhi', 'Active', 5, 6, 'B6_R1_1', 1),
+(N'Phóng Khám sản phụ', 'Active', 5, 6, 'B6_R1_2', 1)
 --select * from room
+alter table room
+alter column [Floor] INT NOT NULL;
 
+--DELETE FROM Room WHERE RoomID > -1
 
 --CREATE SEQUENCE MedicalRecordID_Sequence
 --START WITH 1
@@ -204,5 +207,4 @@ VALUES
 --values (176750, N'Nguyễn Phú Lương', 'Mr.', 'Available', 1, 7, '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92')
 insert into MedicalStaff (StaffID, MSName, Title, [Status], StaffTypeID, SpecialtyID, [Password])
 values (176726, N'Nguyễn Ngọc Hoàng San', 'Mr.', 'Available', 3, NULL, NULL)
-
 
