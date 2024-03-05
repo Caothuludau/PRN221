@@ -3,10 +3,12 @@
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\AdminWindow.xaml;;
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\DisplayWindow.xaml;;
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\DoctorWindow.xaml;;
+FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\GenderGridUC.xaml;;
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\GetPatientWindow.xaml;;
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\LoginWindow.xaml;;
-FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\SigninWindow.xaml;;
-FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\GenderGridUC.xaml;;
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\MedicalRecordWindow.xaml;;
+FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\PatientWindow\Header.xaml;;
+FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\PatientWindow\RegisterWindow.xaml;;
+FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\SigninWindow.xaml;;
 FD:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\UserControl1.xaml;;
 

@@ -99,7 +99,17 @@ alter column [Floor] INT NOT NULL;
 
 --ALTER TABLE MedicalRecord
 --ADD CONSTRAINT DF_MedicalRecord_MedicalRecordID DEFAULT NEXT VALUE FOR MedicalRecordID_Sequence FOR MedicalRecordID;
+--alter table MedicalRecord
+--add Occupation nchar(200)
 
+--alter table MedicalRecord
+--add Company nchar(200)
+
+--alter table MedicalRecord
+--add Address nchar(200)
+
+--alter table MedicalRecord
+--add TreatmentForm nchar(200)
 --select * from MedicalRecord
 
 INSERT INTO MedicalRecord(FullName, DateOfBirth, Gender, Diagnosis, [File], SocialInsuranceCode, DateAdmitted, DateDischarged, Note) 
@@ -208,3 +218,5 @@ VALUES
 insert into MedicalStaff (StaffID, MSName, Title, [Status], StaffTypeID, SpecialtyID, [Password])
 values (176726, N'Nguyễn Ngọc Hoàng San', 'Mr.', 'Available', 3, NULL, NULL)
 
+--alter table MedicalRecord add Ethnicity nchar(200)
+select * from MedicalRecord

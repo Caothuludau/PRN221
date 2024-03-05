@@ -77,3 +77,7 @@ D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\GenderGri
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\MedicalRecordWindow.baml
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\UserControl1.g.cs
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\UserControl1.baml
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\PatientWindow\RegisterWindow.g.cs
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\PatientWindow\RegisterWindow.baml
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\PatientWindow\Header.g.cs
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\PatientWindow\Header.baml

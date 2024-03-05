@@ -25,6 +25,12 @@
     <Compile Update="MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PatientWindow\Header.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PatientWindow\RegisterWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SigninWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +58,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MedicalRecordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PatientWindow\Header.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PatientWindow\RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SigninWindow.xaml">

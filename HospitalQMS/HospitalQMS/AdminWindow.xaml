@@ -12,12 +12,14 @@
         </Grid>
         <Grid HorizontalAlignment="Center" Height="380" Margin="0,45,0,0" VerticalAlignment="Top" Width="800">
             <TabControl HorizontalAlignment="Center" Height="380" VerticalAlignment="Center" Width="800">
-                <TabItem x:Name="tabDSBN" Header="Danh sách Bệnh nhân">
-
-                </TabItem>
-                <TabItem x:Name="tabPatient" Header="Quản lý Danh sách Bệnh nhân">
+                <TabItem x:Name="tabHospitalize" Header="Quản lý Nhập viện">
                     
-
+                </TabItem>
+                <TabItem x:Name="tabDischarge" Header="Quản lý Ra viện">
+                    
+                </TabItem>
+                <TabItem x:Name="tabPatient" Header="Quản lý Danh sách bệnh nhân">
+                    
                 </TabItem>
             </TabControl>
         </Grid>
