@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FllN4rTMNi+gdVItOq521pNtL5A5O/jgl8zam5sCl2pwtRXqUPcDFxUj71o7SyBo39yuN2RbXSTqVA7kebCrcA==",
+  "dgSpecHash": "novpev/8yCLaQ6eiNqTmK3IvodMRpa47rx+l2AL207/Ay46A5n49Vy/6VwocQHzol8tDARaWcO9necDHjmj5zw==",
   "success": true,
-  "projectFilePath": "D:\\Ky7\\PRNRepo\\DemoTCPService\\ServerApp\\ServerApp.csproj",
+  "projectFilePath": "D:\\Ky7\\PRNRepo\\PRN221\\DemoTCPService\\ServerApp\\ServerApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

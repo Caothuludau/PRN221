@@ -196,6 +196,11 @@ namespace HospitalQMS.Models
                     .HasColumnName("PatientID")
                     .HasDefaultValueSql("(NEXT VALUE FOR [PatientID_Sequence])");
 
+                entity.Property(e => e.Ccnumber)
+                    .HasMaxLength(12)
+                    .HasColumnName("CCNumber")
+                    .IsFixedLength();
+
                 entity.Property(e => e.DateOfBirth).HasColumnType("date");
 
                 entity.Property(e => e.MedicalRecordId).HasColumnName("MedicalRecordID");

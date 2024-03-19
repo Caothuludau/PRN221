@@ -1,0 +1,34 @@
+﻿<Window x:Class="HospitalQMS.StaffWindow.AddPatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalQMS.StaffWindow"
+        mc:Ignorable="d"
+        Title="Thêm bệnh nhân" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <Label FontSize="20" Content="Thêm bệnh nhân" HorizontalAlignment="Center"/>
+            <Label Content="Số căn cước"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtCC"/>
+            <Label Content="Họ và tên*"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtName"/>
+            <Label Content="Giới tính*"/>
+            <StackPanel Orientation="Horizontal" Width="390">
+                <RadioButton x:Name="rbMale" IsChecked="True" Width="63">Nam</RadioButton>
+                <RadioButton x:Name="rbFemale" Content="Nữ"/>
+            </StackPanel>
+            <Label Content="Ngày sinh (tháng/ngày/năm)*"/>
+            <DatePicker Width="390" x:Name="dpDOB"/>
+            <Label Content="Mã BHYT"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtBHYT"/>
+            <Label Content="Đối tượng ưu tiên"/>
+            <ComboBox Width="390" x:Name="cbPriority"/>
+            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnRefresh" Content="Làm mới" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnRefresh_Click"/>
+                <Button x:Name="btnAdd" Content="Thêm" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnAdd_Click"/>
+            </StackPanel>
+        </StackPanel>
+       
+    </Grid>
+</Window>

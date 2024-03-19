@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky7\\PRNRepo\\DemoTCPService\\ServerApp\\ServerApp.csproj": {}
+    "D:\\Ky7\\PRNRepo\\PRN221\\DemoTCPService\\ServerApp\\ServerApp.csproj": {}
   },
   "projects": {
-    "D:\\Ky7\\PRNRepo\\DemoTCPService\\ServerApp\\ServerApp.csproj": {
+    "D:\\Ky7\\PRNRepo\\PRN221\\DemoTCPService\\ServerApp\\ServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky7\\PRNRepo\\DemoTCPService\\ServerApp\\ServerApp.csproj",
+        "projectUniqueName": "D:\\Ky7\\PRNRepo\\PRN221\\DemoTCPService\\ServerApp\\ServerApp.csproj",
         "projectName": "ServerApp",
-        "projectPath": "D:\\Ky7\\PRNRepo\\DemoTCPService\\ServerApp\\ServerApp.csproj",
+        "projectPath": "D:\\Ky7\\PRNRepo\\PRN221\\DemoTCPService\\ServerApp\\ServerApp.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky7\\PRNRepo\\DemoTCPService\\ServerApp\\obj\\",
+        "outputPath": "D:\\Ky7\\PRNRepo\\PRN221\\DemoTCPService\\ServerApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

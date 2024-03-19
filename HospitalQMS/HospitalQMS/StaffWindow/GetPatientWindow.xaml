@@ -1,0 +1,52 @@
+﻿<Window x:Class="HospitalQMS.GetPatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalQMS"
+        mc:Ignorable="d"
+        Title="Đăng ký khám" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Label FontSize="20" Content="Đăng ký khám" HorizontalAlignment="Center"/>
+            <Label Content="Mã BHYT"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtBHYT" Text="{Binding MedicalRecord.SocialInsuranceCode}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
+            <Label Content="Họ và tên"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtName" Text="{Binding Pname}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
+            <Label Content="Giới tính"/>
+            <TextBox Width="390" x:Name="txtGender" TextWrapping="Wrap" Text="{Binding MedicalRecord.Gender}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
+            <Label Content="Ngày sinh (tháng/ngày/năm)"/>
+            <DatePicker Width="390" x:Name="dpDOB" SelectedDate="{Binding DateOfBirth}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
+            <Label Content="Đối tượng ưu tiên"/>
+            <TextBox Width="390" x:Name="txtPriority" TextWrapping="Wrap" Text="{Binding PriorityTypeId}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
+            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnAdd" Content="Đăng ký khám" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnAdd_Click"/>
+                <Button x:Name="btnHSBA" Content="Xem hồ sơ bệnh án" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnHSBA_Click"/>
+            </StackPanel>
+         </StackPanel>
+            <StackPanel Grid.Column="1">
+            <Label Content="Tìm kiếm bệnh nhân bằng mã CCCD hoặc tên:"/>
+                <StackPanel Height="30" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox x:Name="txtSearch" TextWrapping="Wrap" Width="300" Padding="-1,1,1,1" Margin="5,5,0,5" DragEnter="btnSearch_Click"/>
+                    <Button x:Name="btnSearch" Content="Tìm kiếm" Width="80" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnSearch_Click" />
+                </StackPanel>
+                <Line Height="10"/>
+                <ListView x:Name="lvPatient" Height="Auto">
+                    <ListView.View>
+                        <GridView>
+                        <GridViewColumn Header="Status" Width="70" DisplayMemberBinding="{Binding Status}"/>
+                        <GridViewColumn Header="Gender" Width="70" DisplayMemberBinding="{Binding MedicalRecord.Gender}"/>
+                        <GridViewColumn Header="Name" Width="155" DisplayMemberBinding="{Binding Pname}"/>
+                        <GridViewColumn Header="DOB" Width="100" DisplayMemberBinding="{Binding DateOfBirth, StringFormat='dd-MM-yyyy'}" />
+                        <GridViewColumn Header="BHYT" Width="0" DisplayMemberBinding="{Binding MedicalRecord.SocialInsuranceCode}"/>
+                    </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+    </Grid>
+</Window>

@@ -1,4 +1,4 @@
-﻿
+﻿ 
 insert into PriorityType values 
 (1, N'Cấp cứu', ''),
 (2, N'Người khuyết tật nặng', ''),
@@ -174,7 +174,7 @@ VALUES (N'Nguyễn Văn Hoàng', '1955-11-14', N'Nam', N'Bệnh đau thắt ng�
 --select * from MedicalRecord
 --select * from PriorityType
 --select * from Patient
---Status for Patient: (Nhập viện - Hospitalized, Chờ khám - Waiting, Đang khám - Examining, Đã khám - Examined, Hủy khám - Canceled examination, Chuyển phòng - Change Room)
+--Status for Patient: (Nhập viện - Hospitalized, Chờ khám - Waiting, Đang khám - Examining, Đã khám - Examined, Chờ kết quả - Awaiting result, Hủy khám - Canceled examination, Chuyển phòng - Change Room, Rời viện - Discharged)
 insert into Patient (PName, DateOfBirth, [Status], PriorityTypeID, MedicalRecordID) 
 VALUES 
 (N'Nguyễn Phú Lương', '2003-03-13', 'Hospitalized', 7, 1),

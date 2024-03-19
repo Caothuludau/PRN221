@@ -7,22 +7,25 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AdminWindow.xaml.cs">
+    <Compile Update="StaffWindow\AddPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DoctorWindow.xaml.cs">
+    <Compile Update="StaffWindow\AdminWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GenderGridUC.xaml.cs">
+    <Compile Update="DoctorWindow\DoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="GetPatientWindow.xaml.cs">
+    <Compile Update="UserControl\GenderGridUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="LoginWindow.xaml.cs">
+    <Compile Update="StaffWindow\GetPatientWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MedicalRecordWindow.xaml.cs">
+    <Compile Update="GuestWindow\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffWindow\MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PatientWindow\Header.xaml.cs">
@@ -31,33 +34,36 @@
     <Compile Update="PatientWindow\RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SigninWindow.xaml.cs">
+    <Compile Update="GuestWindow\SigninWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserControl1.xaml.cs">
+    <Compile Update="UserControl\UserControl1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AdminWindow.xaml">
+    <Page Update="StaffWindow\AddPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DoctorWindow.xaml">
+    <Page Update="StaffWindow\AdminWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GenderGridUC.xaml">
+    <Page Update="DoctorWindow\DoctorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GetPatientWindow.xaml">
+    <Page Update="UserControl\GenderGridUC.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="LoginWindow.xaml">
+    <Page Update="StaffWindow\GetPatientWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DisplayWindow.xaml">
+    <Page Update="GuestWindow\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MedicalRecordWindow.xaml">
+    <Page Update="DoctorWindow\DisplayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindow\MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PatientWindow\Header.xaml">
@@ -66,10 +72,10 @@
     <Page Update="PatientWindow\RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SigninWindow.xaml">
+    <Page Update="GuestWindow\SigninWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserControl1.xaml">
+    <Page Update="UserControl\UserControl1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -10,7 +10,22 @@ namespace HospitalQMS.DAO
 {
     internal class PatientDAO
     {
-        public Patient? GetPatientById(int id)
+        private static PatientDAO? instance = null;
+        private static readonly object instanceLock = new object();
+        private PatientDAO() { }
+        public static PatientDAO Instance
+        {
+            get
+            {
+                lock (instanceLock)
+                {
+                    if (instance == null)
+                        instance = new PatientDAO();
+                }
+                return instance;
+            }
+        }
+        public Patient? GetPatientByCCId(string id)
         {
             Patient? obj = null;
             try
@@ -19,7 +34,7 @@ namespace HospitalQMS.DAO
                 obj = _context.Patients
                               .Include(p => p.MedicalRecord)  // Eager loading for MedicalRecord
                               .Include(p => p.PriorityType)   // Eager loading for PriorityType
-                              .SingleOrDefault(x => x.PatientId == id);
+                              .SingleOrDefault(x => x.Ccnumber.Equals(id));
             }
             catch (Exception ex)
             {
@@ -44,6 +59,39 @@ namespace HospitalQMS.DAO
                 throw new Exception(ex.Message);
             }
             return patients;
+        }
+
+        public ICollection<Patient> GetSmallPatientList()
+        {
+            var objects = new List<Patient>();
+            try
+            {
+                HospitalQMSContext _context = new HospitalQMSContext();
+                objects = _context.Patients
+                              .Include(p => p.MedicalRecord)  // Eager loading for MedicalRecord
+                              .Include(p => p.PriorityType)   // Eager loading for PriorityType
+                              .ToList()
+                              .GetRange(1, 5);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return objects;
+        }
+
+        public void AddPatient(Patient obj)
+        {
+            try
+            {
+                HospitalQMSContext _context = new HospitalQMSContext();
+                _context.Patients.Add(obj);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

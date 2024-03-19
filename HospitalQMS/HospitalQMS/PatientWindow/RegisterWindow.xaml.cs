@@ -40,6 +40,8 @@ namespace HospitalQMS.PatientWindow
         {
             grSecond.Visibility = Visibility.Collapsed;
             grThird.Visibility = Visibility.Visible;
+
+            //Code of insert guest into register query can be implement here
         }
 
         private void btnReturnFirst_Click(object sender, RoutedEventArgs e)

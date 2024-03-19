@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\App.xaml
-111935930397
+12-1886562605
 
-302020986877
+311778041464
 220922856339
-AdminWindow.xaml;DisplayWindow.xaml;DoctorWindow.xaml;GenderGridUC.xaml;GetPatientWindow.xaml;LoginWindow.xaml;MedicalRecordWindow.xaml;PatientWindow\Header.xaml;PatientWindow\RegisterWindow.xaml;SigninWindow.xaml;UserControl1.xaml;
+DoctorWindow\DisplayWindow.xaml;DoctorWindow\DoctorWindow.xaml;GuestWindow\LoginWindow.xaml;GuestWindow\SigninWindow.xaml;PatientWindow\Header.xaml;PatientWindow\RegisterWindow.xaml;StaffWindow\AddPatientWindow.xaml;StaffWindow\AdminWindow.xaml;StaffWindow\GetPatientWindow.xaml;StaffWindow\MedicalRecordWindow.xaml;UserControl\GenderGridUC.xaml;UserControl\UserControl1.xaml;
 
 False
 

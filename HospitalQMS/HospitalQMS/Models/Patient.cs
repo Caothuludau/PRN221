@@ -16,6 +16,7 @@ namespace HospitalQMS.Models
         public string Status { get; set; } = null!;
         public int? PriorityTypeId { get; set; }
         public int? MedicalRecordId { get; set; }
+        public string Ccnumber { get; set; } = null!;
 
         public virtual MedicalRecord? MedicalRecord { get; set; }
         public virtual PriorityType? PriorityType { get; set; }
