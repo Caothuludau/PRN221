@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,32 +25,67 @@ namespace HospitalQMS.StaffWindow
         public AddPatientWindow()
         {
             InitializeComponent();
+            PriorityTypeLoad();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //validate data
-            if (validateData())
+            if (ValidateData())
             {
-                Patient newP = new Patient();
-                newP.Pname = txtName.Text.Trim();
-                if (!String.IsNullOrWhiteSpace(txtCC.Text)) newP.Ccnumber = txtCC.Text.Trim();
-                if (dpDOB.SelectedDate != null) newP.DateOfBirth = dpDOB.SelectedDate.Value;
-                newP.Status = "Hospitalized"; //nhap vien
+                Patient newPatient = CreateNewPatient();
+                MedicalRecord newMedicalRecord = CreateMedicalRecord(newPatient);
 
-                //For Medical Record
-                MedicalRecord newMR = new MedicalRecord();
-                newMR.FullName = newP.Pname;
-                if (rbFemale.IsChecked == true) newMR.Gender = "Nữ";
-                else newMR.Gender = "Nam";
-                newMR.DateOfBirth = newP.DateOfBirth;
-                newMR.DateAdmitted = DateTime.Now;
-                MedicalRecordDAO.Instance.AddMedicalRecord(newMR);
+                // Add Medical Record
+                MedicalRecordDAO.Instance.AddMedicalRecord(newMedicalRecord);
 
-                newP.MedicalRecordId = MedicalRecordDAO.Instance.GetNewestMedicalRecord().MedicalRecordId;
-                PatientDAO.Instance.AddPatient(newP);
+                // Retrieve the newest Medical Record
+                MedicalRecord? newestMedicalRecord = MedicalRecordDAO.Instance.GetNewestMedicalRecord();
+
+                if (newestMedicalRecord != null)
+                {
+                    // Assign Medical Record ID to the new Patient
+                    newPatient.MedicalRecordId = newestMedicalRecord.MedicalRecordId;
+
+                    // Add Patient
+                    PatientDAO.Instance.AddPatient(newPatient);
+
+                    MessageBox.Show("Thêm bệnh nhân thành công!");
+                    RedirectToGetPatientWindow();
+                }
             }
         }
+
+        private Patient CreateNewPatient()
+        {
+
+            PriorityType? selectedPriority = cbPriority.SelectedItem as PriorityType;
+            Patient newPatient = new Patient
+            {
+                Pname = txtName.Text.Trim(),
+                Ccnumber = txtCC.Text.Trim(),
+                DateOfBirth = dpDOB.SelectedDate ?? DateTime.MinValue,
+                PriorityTypeId = selectedPriority.PriorityTypeId,
+                Status = "Hospitalized" // Assuming this is the default status for a new patient
+            };
+
+            return newPatient;
+        }
+
+        private MedicalRecord CreateMedicalRecord(Patient patient)
+        {
+            MedicalRecord newMedicalRecord = new MedicalRecord
+            {
+                FullName = patient.Pname,
+                Gender = (rbFemale.IsChecked == true) ? "Nữ" : "Nam",
+                DateOfBirth = patient.DateOfBirth,
+                DateAdmitted = DateTime.Now,
+                Address = txtAddress.Text,
+                SocialInsuranceCode = txtBHYT.Text.Trim()
+            };
+
+            return newMedicalRecord;
+        }
+
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
@@ -61,11 +97,14 @@ namespace HospitalQMS.StaffWindow
             rbMale.IsChecked = true;
         }
 
-        public bool validateData()
+        public bool ValidateData()
         {
-            int temp;
+            // Regular expression pattern to match only digits
+            string digitPattern = @"^\d+$";
+            Regex digitNumber = new Regex(digitPattern);
+
             //validate format
-            if (String.IsNullOrWhiteSpace(txtName.Text) || cbPriority.SelectedItem == null || dpDOB.SelectedDate == null)
+            if (String.IsNullOrWhiteSpace(txtName.Text) || cbPriority.SelectedItem == null || dpDOB.SelectedDate == null || String.IsNullOrWhiteSpace(txtAddress.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ các trường thông tin cần thiết!");
                 return false;
@@ -75,9 +114,9 @@ namespace HospitalQMS.StaffWindow
                 MessageBox.Show("Ngày sinh không được lớn hơn ngày hiện tại!");
                 return false;
             }
-            else if (txtCC.Text.Length != 12 || !Int32.TryParse(txtCC.Text, out temp))
+            else if (txtCC.Text.Trim().Length != 12 || !digitNumber.IsMatch(txtCC.Text.Trim()))
             {
-                MessageBox.Show("Số căn cước phải là một dãy số gồm đủ 12 chữ số!");
+                MessageBox.Show("Số căn cước phải là một dãy số gồm đủ 12 chữ số!" + txtCC.Text.Trim().Length);
                 return false;
             }
             //validate data
@@ -102,6 +141,18 @@ namespace HospitalQMS.StaffWindow
                 return false;
             }
             return true;
+        }
+
+        public void PriorityTypeLoad()
+        {
+            cbPriority.ItemsSource = PriorityTypeDAO.Instance.GetPriorityTypeList();
+        }
+
+        public void RedirectToGetPatientWindow()
+        {
+            var nw = new GetPatientWindow(true);
+            nw.Show();
+            this.Close();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace HospitalQMS.Models
         public DateTime RegisterTime { get; set; }
         public int PatientId { get; set; }
         public int? RoomId { get; set; }
+        public string Status { get; set; } = null!;
 
         public virtual Patient Patient { get; set; } = null!;
         public virtual Room? Room { get; set; }

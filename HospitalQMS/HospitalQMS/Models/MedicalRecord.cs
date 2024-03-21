@@ -14,8 +14,8 @@ namespace HospitalQMS.Models
         public string FullName { get; set; } = null!;
         public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; } = null!;
-        public string Diagnosis { get; set; } = null!;
-        public string File { get; set; } = null!;
+        public string? Diagnosis { get; set; }
+        public string? File { get; set; }
         public string? SocialInsuranceCode { get; set; }
         public DateTime? DateAdmitted { get; set; }
         public DateTime? DateDischarged { get; set; }

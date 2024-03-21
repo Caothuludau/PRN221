@@ -70,6 +70,7 @@ namespace HospitalQMS.DAO
                 objects = _context.Patients
                               .Include(p => p.MedicalRecord)  // Eager loading for MedicalRecord
                               .Include(p => p.PriorityType)   // Eager loading for PriorityType
+                              .OrderByDescending(p => p.PatientId)
                               .ToList()
                               .GetRange(1, 5);
             }
@@ -78,6 +79,21 @@ namespace HospitalQMS.DAO
                 throw new Exception(ex.Message);
             }
             return objects;
+        }
+
+        public Patient? GetNewestPatient()
+        {
+            try
+            {
+                HospitalQMSContext _context = new HospitalQMSContext();
+                return _context.Patients.Include(p => p.MedicalRecord)  // Eager loading for MedicalRecord
+                                        .Include(p => p.PriorityType)   // Eager loading for PriorityType
+                                        .OrderByDescending(x => x.PatientId).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void AddPatient(Patient obj)
@@ -93,5 +109,6 @@ namespace HospitalQMS.DAO
                 throw new Exception(ex.Message);
             }
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using HospitalQMS.DAO;
 using HospitalQMS.Models;
+using HospitalQMS.StaffWindow;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +22,17 @@ namespace HospitalQMS
     /// </summary>
     public partial class GetPatientWindow : Window
     {
+        private Patient? _newestPatient;
         public GetPatientWindow()
         {
             InitializeComponent();
             loadPatient();
         }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        public GetPatientWindow(bool newPatientAdded)
         {
-
+            InitializeComponent();
+            loadPatient();
+            loadNewPatient();
         }
 
         public void loadPatient()
@@ -37,10 +40,24 @@ namespace HospitalQMS
             PatientDAO patientDAO = PatientDAO.Instance;
             lvPatient.ItemsSource = patientDAO.GetSmallPatientList();
         }
+        
+        private void loadNewPatient()
+        {
+            _newestPatient = PatientDAO.Instance.GetNewestPatient();
+            List<Patient> patients = new List<Patient>();
+
+            if (_newestPatient != null)
+            {
+                patients.Add(_newestPatient);
+            }
+
+            lvPatient.ItemsSource = patients;
+            lvPatient.SelectedItem = _newestPatient;
+        }
 
         private void btnHSBA_Click(object sender, RoutedEventArgs e)
         {
-            Patient selectedP = lvPatient.SelectedItem as Patient;
+            Patient? selectedP = lvPatient.SelectedItem as Patient;
             if (selectedP != null)
             {
                 MedicalRecordWindow mrw = new MedicalRecordWindow(selectedP);
@@ -72,6 +89,12 @@ namespace HospitalQMS
             }
 
             lvPatient.ItemsSource = list;
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            ExamineTicket ex = new ExamineTicket(_newestPatient);
+            ex.ShowDialog();
         }
     }
 }

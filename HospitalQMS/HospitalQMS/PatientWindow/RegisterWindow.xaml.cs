@@ -55,5 +55,6 @@ namespace HospitalQMS.PatientWindow
             grFourth.Visibility = Visibility.Collapsed;
             grSecond.Visibility = Visibility.Visible;
         }
+
     }
 }

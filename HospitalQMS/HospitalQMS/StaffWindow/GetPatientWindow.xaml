@@ -14,6 +14,8 @@
 
         <StackPanel Grid.Column="0">
             <Label FontSize="20" Content="Đăng ký khám" HorizontalAlignment="Center"/>
+            <Label Content="Số căn cước"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtCcnumber" Text="{Binding Ccnumber}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
             <Label Content="Mã BHYT"/>
             <TextBox TextWrapping="Wrap" Width="390" x:Name="txtBHYT" Text="{Binding MedicalRecord.SocialInsuranceCode}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
             <Label Content="Họ và tên"/>
@@ -25,7 +27,7 @@
             <Label Content="Đối tượng ưu tiên"/>
             <TextBox Width="390" x:Name="txtPriority" TextWrapping="Wrap" Text="{Binding PriorityTypeId}" DataContext="{Binding SelectedItem,ElementName=lvPatient}" IsEnabled="False"/>
             <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnAdd" Content="Đăng ký khám" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnAdd_Click"/>
+                <Button x:Name="btnRegister" Content="Đăng ký khám" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnRegister_Click"/>
                 <Button x:Name="btnHSBA" Content="Xem hồ sơ bệnh án" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnHSBA_Click"/>
             </StackPanel>
          </StackPanel>
@@ -44,6 +46,7 @@
                         <GridViewColumn Header="Name" Width="155" DisplayMemberBinding="{Binding Pname}"/>
                         <GridViewColumn Header="DOB" Width="100" DisplayMemberBinding="{Binding DateOfBirth, StringFormat='dd-MM-yyyy'}" />
                         <GridViewColumn Header="BHYT" Width="0" DisplayMemberBinding="{Binding MedicalRecord.SocialInsuranceCode}"/>
+                        <GridViewColumn Header="CCNumber" Width="0" DisplayMemberBinding="{Binding Ccnumber}"/>
                     </GridView>
                     </ListView.View>
                 </ListView>

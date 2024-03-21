@@ -41,14 +41,12 @@ namespace HospitalQMS.DAO
             }
         }
        
-        public MedicalRecord GetNewestMedicalRecord()
+        public MedicalRecord? GetNewestMedicalRecord()
         {
             try
             {
-
                 HospitalQMSContext _context = new HospitalQMSContext();
-                return _context.MedicalRecords.Last();
-
+                return _context.MedicalRecords.OrderByDescending(x => x.MedicalRecordId).FirstOrDefault();
             }
             catch (Exception ex)
             {

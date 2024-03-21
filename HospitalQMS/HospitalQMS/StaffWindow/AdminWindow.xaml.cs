@@ -1,5 +1,6 @@
 ﻿using HospitalQMS.DAO;
 using HospitalQMS.Models;
+using HospitalQMS.StaffWindow;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
@@ -35,6 +36,8 @@ namespace HospitalQMS
 
         private void btnNewPatient_Click(object sender, RoutedEventArgs e)
         {
+            AddPatientWindow addPatientWindow = new AddPatientWindow();
+            addPatientWindow.ShowDialog();
 
         }
     }

@@ -16,7 +16,10 @@
     <Compile Update="DoctorWindow\DoctorWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserControl\GenderGridUC.xaml.cs">
+    <Compile Update="StaffWindow\ExamineTicket.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Component\GenderGridUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StaffWindow\GetPatientWindow.xaml.cs">
@@ -28,16 +31,13 @@
     <Compile Update="StaffWindow\MedicalRecordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PatientWindow\Header.xaml.cs">
+    <Compile Update="Component\Header.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PatientWindow\RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="GuestWindow\SigninWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControl\UserControl1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -51,7 +51,10 @@
     <Page Update="DoctorWindow\DoctorWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserControl\GenderGridUC.xaml">
+    <Page Update="StaffWindow\ExamineTicket.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\GenderGridUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindow\GetPatientWindow.xaml">
@@ -66,16 +69,13 @@
     <Page Update="StaffWindow\MedicalRecordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PatientWindow\Header.xaml">
+    <Page Update="Component\Header.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PatientWindow\RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GuestWindow\SigninWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControl\UserControl1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

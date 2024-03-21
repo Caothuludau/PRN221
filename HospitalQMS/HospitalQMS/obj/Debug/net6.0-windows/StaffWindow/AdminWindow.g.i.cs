@@ -101,7 +101,7 @@ namespace HospitalQMS {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalQMS;component/staffwindow/adminwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalQMS;V1.0.0.0;component/staffwindow/adminwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\StaffWindow\AdminWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

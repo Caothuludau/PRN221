@@ -22,8 +22,10 @@
             <DatePicker Width="390" x:Name="dpDOB"/>
             <Label Content="Mã BHYT"/>
             <TextBox TextWrapping="Wrap" Width="390" x:Name="txtBHYT"/>
-            <Label Content="Đối tượng ưu tiên"/>
-            <ComboBox Width="390" x:Name="cbPriority"/>
+            <Label Content="Địa chỉ*"/>
+            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtAddress"/>
+            <Label Content="Đối tượng ưu tiên*"/>
+            <ComboBox Width="390" x:Name="cbPriority" DisplayMemberPath="Ptname"/>
             <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btnRefresh" Content="Làm mới" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnRefresh_Click"/>
                 <Button x:Name="btnAdd" Content="Thêm" Width="120" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnAdd_Click"/>
