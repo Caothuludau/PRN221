@@ -96,5 +96,10 @@ namespace HospitalQMS
             ExamineTicket ex = new ExamineTicket(_newestPatient);
             ex.ShowDialog();
         }
+
+        private void lvPatient_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _newestPatient = lvPatient.SelectedItem as Patient;
+        }
     }
 }

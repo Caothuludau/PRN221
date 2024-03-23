@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using HospitalQMS.DAO;
+using HospitalQMS.Models;
+using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +19,39 @@ namespace HospitalQMS
     /// </summary>
     public partial class DisplayWindow : Window
     {
-        public DisplayWindow()
+        int currentRoomId;
+        public DisplayWindow(int id)
         {
             InitializeComponent();
+            currentRoomId = id;
+            LoadDataComponent();
+        }
+        public void LoadDataComponent()
+        {
+            if (currentRoomId > 0)
+            {
+                try
+                {
+                    LoadWaitingPatient();
+                    LoadExaminingPatient();
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+
+        private void LoadWaitingPatient()
+        {
+            List<Patient> waitingPs = TicketDAO.Instance.GetPatientWaiting(currentRoomId);
+            lvOutRoom.ItemsSource = waitingPs;
+        }
+        private void LoadExaminingPatient()
+        {
+            List<Patient> examPs = TicketDAO.Instance.GetPatientExamining(currentRoomId);
+            lvInRoom.ItemsSource = examPs;
         }
     }
 }

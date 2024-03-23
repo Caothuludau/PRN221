@@ -17,7 +17,6 @@ namespace HospitalQMS.Models
         public int? PriorityTypeId { get; set; }
         public int? MedicalRecordId { get; set; }
         public string? Ccnumber { get; set; }
-
         public virtual MedicalRecord? MedicalRecord { get; set; }
         public virtual PriorityType? PriorityType { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }

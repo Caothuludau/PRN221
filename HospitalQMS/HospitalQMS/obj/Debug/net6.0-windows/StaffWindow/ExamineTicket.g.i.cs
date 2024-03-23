@@ -118,7 +118,7 @@ namespace HospitalQMS.StaffWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalQMS;V1.0.0.0;component/staffwindow/examineticket.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalQMS;component/staffwindow/examineticket.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\StaffWindow\ExamineTicket.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

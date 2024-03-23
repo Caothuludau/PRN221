@@ -220,3 +220,14 @@ values (176726, N'Nguyễn Ngọc Hoàng San', 'Mr.', 'Available', 3, NULL, NULL
 
 --alter table MedicalRecord add Ethnicity nchar(200)
 select * from MedicalRecord
+
+SELECT name
+FROM sys.sequences;
+
+
+--CREATE SEQUENCE TicketID_Sequence
+--START WITH 1
+--INCREMENT BY 1;
+
+--ALTER TABLE Ticket
+--ADD CONSTRAINT DF_Ticket_TicketID DEFAULT NEXT VALUE FOR TicketID_Sequence FOR TicketID;

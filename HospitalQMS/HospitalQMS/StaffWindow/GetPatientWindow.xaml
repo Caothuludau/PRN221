@@ -38,7 +38,7 @@
                     <Button x:Name="btnSearch" Content="Tìm kiếm" Width="80" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnSearch_Click" />
                 </StackPanel>
                 <Line Height="10"/>
-                <ListView x:Name="lvPatient" Height="Auto">
+                <ListView x:Name="lvPatient" Height="Auto" SelectionChanged="lvPatient_SelectionChanged">
                     <ListView.View>
                         <GridView>
                         <GridViewColumn Header="Status" Width="70" DisplayMemberBinding="{Binding Status}"/>

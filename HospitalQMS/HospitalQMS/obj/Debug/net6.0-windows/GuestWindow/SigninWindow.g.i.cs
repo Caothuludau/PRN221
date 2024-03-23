@@ -93,7 +93,7 @@ namespace HospitalQMS {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalQMS;V1.0.0.0;component/guestwindow/signinwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalQMS;component/guestwindow/signinwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\GuestWindow\SigninWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

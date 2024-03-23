@@ -9,6 +9,22 @@ namespace HospitalQMS.DAO
 {
     internal class RoomDAO
     {
+
+        private static RoomDAO? instance = null;
+        private static readonly object instanceLock = new object();
+        private RoomDAO() { }
+        public static RoomDAO Instance
+        {
+            get
+            {
+                lock (instanceLock)
+                {
+                    if (instance == null)
+                        instance = new RoomDAO();
+                }
+                return instance;
+            }
+        }
         public ICollection<Room> GetRoomListOfDepartment(Department de)
         {
             var rooms = new List<Room>();

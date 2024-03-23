@@ -313,8 +313,8 @@ namespace HospitalQMS.Models
                 entity.ToTable("Ticket");
 
                 entity.Property(e => e.TicketId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("TicketID");
+                    .HasColumnName("TicketID")
+                    .HasDefaultValueSql("(NEXT VALUE FOR [TicketID_Sequence])");
 
                 entity.Property(e => e.PatientId).HasColumnName("PatientID");
 
@@ -345,6 +345,8 @@ namespace HospitalQMS.Models
             modelBuilder.HasSequence("PatientID_Sequence");
 
             modelBuilder.HasSequence("RoomID_Sequence").IncrementsBy(2);
+
+            modelBuilder.HasSequence("TicketID_Sequence");
 
             OnModelCreatingPartial(modelBuilder);
         }

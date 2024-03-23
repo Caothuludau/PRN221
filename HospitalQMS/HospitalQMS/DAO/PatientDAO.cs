@@ -110,5 +110,18 @@ namespace HospitalQMS.DAO
             }
         }
 
+        public void ModifyPatient(Patient obj)
+        {
+            try
+            {
+                HospitalQMSContext _context = new HospitalQMSContext();
+                _context.Entry<Patient>(obj).State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

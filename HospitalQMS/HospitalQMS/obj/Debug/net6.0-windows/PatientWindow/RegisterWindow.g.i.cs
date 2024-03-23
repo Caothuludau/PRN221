@@ -125,7 +125,7 @@ namespace HospitalQMS.PatientWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/HospitalQMS;V1.0.0.0;component/patientwindow/registerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/HospitalQMS;component/patientwindow/registerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\PatientWindow\RegisterWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

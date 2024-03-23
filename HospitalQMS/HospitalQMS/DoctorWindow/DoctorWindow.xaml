@@ -26,8 +26,8 @@
                         </ScrollViewer>
                         <Label  FontSize="16" Margin="55,250,45,0" Content="Chọn Tầng:" Grid.Column="0"/>
                         <ComboBox x:Name="cbFloor" HorizontalAlignment="Left" Margin="171,256,0,0" VerticalAlignment="Top" Width="120" Grid.Column="0"/>
-                        
-                        
+
+
                         <!-- Room WrapPanel -->
                         <Label  FontSize="16" HorizontalAlignment="Center" Content="Chọn Phòng" Grid.Column="1"/>
                         <ScrollViewer Margin="10,30,0,0" Grid.Column="1" VerticalScrollBarVisibility="Auto">
@@ -36,7 +36,118 @@
                     </Grid>
                 </TabItem>
                 <TabItem x:Name="tabPatient" Header="Quản lý Danh sách Bệnh nhân" IsEnabled="False">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="397*"/>
+                            <ColumnDefinition Width="397*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Orientation="Vertical">
+                            <Label Content="Danh sách bệnh nhân đang chờ khám:"/>
+                            <Line Height="10"/>
+                            <ListView x:Name="lvWaitingPatient" SelectionMode="Multiple" Height="250">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Họ và tên" Width="155" DisplayMemberBinding="{Binding Pname}"/>
+                                        <GridViewColumn Header="Giới tính" Width="70" DisplayMemberBinding="{Binding MedicalRecord.Gender}"/>
+                                        <GridViewColumn Header="Ngày sinh" Width="100" DisplayMemberBinding="{Binding DateOfBirth, StringFormat='dd-MM-yyyy'}" />
+                                        <GridViewColumn Header="Ưu tiên" Width="50" DisplayMemberBinding="{Binding PriorityType.PriorityTypeId}"/>
+                                        <GridViewColumn Header="BHYT" Width="0" DisplayMemberBinding="{Binding MedicalRecord.SocialInsuranceCode}"/>
+                                        <GridViewColumn Header="CCNumber" Width="0" DisplayMemberBinding="{Binding Ccnumber}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Line Height="10"/>
+                            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnCallIn" Content="Gọi vào khám" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnCallIn_Click"/>
+                                <Button x:Name="btnSendOut" Content="Chuyển lại ds tiếp nhận" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnSendOut_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Label Content="Danh sách bệnh nhân cần được tiếp nhận:"/>
+                            <Line Height="10"/>
+                            <ListView x:Name="lvHospitalizedPatient" SelectionMode="Multiple" Height="250">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Họ và tên" Width="155" DisplayMemberBinding="{Binding Pname}"/>
+                                        <GridViewColumn Header="Giới tính" Width="70" DisplayMemberBinding="{Binding MedicalRecord.Gender}"/>
+                                        <GridViewColumn Header="Ngày sinh" Width="100" DisplayMemberBinding="{Binding DateOfBirth, StringFormat='dd-MM-yyyy'}" />
+                                        <GridViewColumn Header="Ưu tiên" Width="50" DisplayMemberBinding="{Binding PriorityType.PriorityTypeId}"/>
+                                        <GridViewColumn Header="BHYT" Width="0" DisplayMemberBinding="{Binding MedicalRecord.SocialInsuranceCode}"/>
+                                        <GridViewColumn Header="CCNumber" Width="0" DisplayMemberBinding="{Binding Ccnumber}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <Line Height="10"/>
+                            <StackPanel Height="43" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnSendIn" Content="Chuyển sang hàng chờ" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnSendIn_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                </TabItem>
+                <TabItem x:Name="tabPCD" Header="Tạo phiếu chỉ định" IsEnabled="False">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <Label Content="Chọn khoa"/>
+                            <ComboBox Width="390" x:Name="cbSpecialty" DisplayMemberPath="Sname"/>
+                            <Label Content="Chẩn đoán"/>
+                            <TextBox TextWrapping="Wrap" Width="390" x:Name="txtDiagnosis" Height="48"/>
+                            <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnUpdate" Content="Thêm vào PCD" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnUpdate_Click"/>
+                            </StackPanel>
+                            <Label FontSize="14" Content="Thêm yêu cầu khám" HorizontalAlignment="Center"/>
+                            <Label Content="Dịch vụ khám"/>
+                            <TextBox Width="390" x:Name="txtService"/>
+                            <Label Content="Nơi thực hiện:"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Width="70" Content="Tòa nhà"/>
+                                <ComboBox Width="300" x:Name="cbDepartment" DisplayMemberPath="Dname" SelectionChanged="cbDepartment_SelectionChanged"/>
+                            </StackPanel>
+                            <Line Height="5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Width="70" Content="Phòng"/>
+                                <ComboBox x:Name="cbRoom" Width="300" DisplayMemberPath="Rname"/>
+                            </StackPanel>
+
+                            <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnAdd" Content="Thêm yêu cầu" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnAdd_Click"/>
+                                <Button x:Name="btnDelete" Content="Xóa yêu cầu" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnDelete_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Label x:Name="lbPCD" FontSize="16" Content="Phiếu chỉ định" HorizontalAlignment="Center"/>
+                            <Label Content="Khoa"/>
+                            <TextBox Width="390" x:Name="cdSpecialty"/>
+                            <Label Content="Chẩn đoán"/>
+                            <TextBox TextWrapping="Wrap" Width="390" x:Name="cdDiagnosis" Height="48"/>
+                            <ListView x:Name="lvCD" Height="150" Width="390">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Dịch vụ khám" Width="180" DisplayMemberBinding="{Binding serviceName}"/>
+                                        <GridViewColumn Header="Nơi thực hiện" Width="160" DisplayMemberBinding="{Binding roomName}"/>
+                                        <GridViewColumn Header="STT" Width="50" DisplayMemberBinding="{Binding ticketNumber}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="btnCreatePCD" Content="Tạo phiếu chỉ định" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnCreatePCD_Click"/>
+                                <Button x:Name="btnCancelPCD" Content="Chuyển lại về phòng chờ" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnCancelPCD_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                </TabItem>
+                <TabItem x:Name="tabNormalRoom" Header="Chuyển Phòng" IsEnabled="False">
+                    <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="btnChangeRoom" Content="Tạo phiếu chỉ định" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnChangeRoom_Click"/>
+                        <Button x:Name="btnCancelNR" Content="Chuyển lại về phòng chờ" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnCancelNR_Click"/>
+                    </StackPanel>
                 </TabItem>
             </TabControl>
         </Grid>

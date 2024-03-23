@@ -34,9 +34,9 @@ namespace HospitalQMS
             DoctorWindow doctorWindo = new DoctorWindow(msao); //ms will not null
             doctorWindo.Show();
             this.Close();*/
-            AdminWindow adminWindow1 = new AdminWindow();
+            /*AdminWindow adminWindow1 = new AdminWindow();
             adminWindow1.Show();
-            this.Close();
+            this.Close();*/
 
             string staffId = txtStaffID.Text;
             string password = txtPassword.Password;

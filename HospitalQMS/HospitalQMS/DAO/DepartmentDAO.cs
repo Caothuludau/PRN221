@@ -7,9 +7,23 @@ using System.Threading.Tasks;
 
 namespace HospitalQMS.DAO
 {
-    internal class DepartmentDAO
+    class DepartmentDAO
     {
-
+        private static DepartmentDAO? instance = null;
+        private static readonly object instanceLock = new object();
+        private DepartmentDAO() { }
+        public static DepartmentDAO Instance
+        {
+            get
+            {
+                lock (instanceLock)
+                {
+                    if (instance == null)
+                        instance = new DepartmentDAO();
+                }
+                return instance;
+            }
+        }
         public ICollection<Department> GetDepartmentList()
         {
             var departments = new List<Department>();
