@@ -114,6 +114,7 @@ namespace HospitalQMS
             if (patientsChoosen != null)
             {
                 DrawbackStatusSendOut(patientsChoosen);
+                UpdateDisplayWindow();
             }
         }
 
@@ -123,6 +124,7 @@ namespace HospitalQMS
             if (patientsChoosen != null)
             {
                 ModifyStatusSendIn(patientsChoosen);
+                UpdateDisplayWindow();
             }
         }
 
@@ -368,6 +370,8 @@ namespace HospitalQMS
                     TicketDAO.Instance.ModifyTicket(t);
                     LoadHospitalizedPatient();
                     LoadWaitingPatient();
+                    UpdateDisplayWindow();
+                    tabPatient.IsSelected = true;
                 }
             }
         }
@@ -420,6 +424,7 @@ namespace HospitalQMS
                     TicketDAO.Instance.ModifyTicket(t);
                     LoadHospitalizedPatient();
                     LoadWaitingPatient();
+                    UpdateDisplayWindow();
                 }
             }
         }
@@ -438,6 +443,7 @@ namespace HospitalQMS
                     TicketDAO.Instance.ModifyTicket(t);
                     LoadHospitalizedPatient();
                     LoadWaitingPatient();
+                    UpdateDisplayWindow();
                 }
             }
         }

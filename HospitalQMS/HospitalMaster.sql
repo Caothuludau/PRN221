@@ -1,0 +1,376 @@
+USE [master]
+GO
+/****** Object:  Database [HospitalQMS]    Script Date: 3/23/2024 1:02:03 PM ******/
+CREATE DATABASE [HospitalQMS]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'HospitalQMS', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\HospitalQMS.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'HospitalQMS_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA\HospitalQMS_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [HospitalQMS] SET COMPATIBILITY_LEVEL = 160
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [HospitalQMS].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [HospitalQMS] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [HospitalQMS] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [HospitalQMS] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [HospitalQMS] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [HospitalQMS] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET RECOVERY FULL 
+GO
+ALTER DATABASE [HospitalQMS] SET  MULTI_USER 
+GO
+ALTER DATABASE [HospitalQMS] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [HospitalQMS] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [HospitalQMS] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [HospitalQMS] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [HospitalQMS] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [HospitalQMS] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'HospitalQMS', N'ON'
+GO
+ALTER DATABASE [HospitalQMS] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [HospitalQMS] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [HospitalQMS]
+GO
+USE [HospitalQMS]
+GO
+/****** Object:  Sequence [dbo].[MedicalRecordID_Sequence]    Script Date: 3/23/2024 1:02:04 PM ******/
+CREATE SEQUENCE [dbo].[MedicalRecordID_Sequence] 
+ AS [bigint]
+ START WITH 1
+ INCREMENT BY 3
+ MINVALUE -9223372036854775808
+ MAXVALUE 9223372036854775807
+ CACHE 
+GO
+USE [HospitalQMS]
+GO
+/****** Object:  Sequence [dbo].[MedicalReportID_Sequence]    Script Date: 3/23/2024 1:02:04 PM ******/
+CREATE SEQUENCE [dbo].[MedicalReportID_Sequence] 
+ AS [bigint]
+ START WITH 1
+ INCREMENT BY 3
+ MINVALUE -9223372036854775808
+ MAXVALUE 9223372036854775807
+ CACHE 
+GO
+USE [HospitalQMS]
+GO
+/****** Object:  Sequence [dbo].[PatientID_Sequence]    Script Date: 3/23/2024 1:02:04 PM ******/
+CREATE SEQUENCE [dbo].[PatientID_Sequence] 
+ AS [bigint]
+ START WITH 1
+ INCREMENT BY 1
+ MINVALUE -9223372036854775808
+ MAXVALUE 9223372036854775807
+ CACHE 
+GO
+USE [HospitalQMS]
+GO
+/****** Object:  Sequence [dbo].[RoomID_Sequence]    Script Date: 3/23/2024 1:02:04 PM ******/
+CREATE SEQUENCE [dbo].[RoomID_Sequence] 
+ AS [bigint]
+ START WITH 1
+ INCREMENT BY 2
+ MINVALUE -9223372036854775808
+ MAXVALUE 9223372036854775807
+ CACHE 
+GO
+USE [HospitalQMS]
+GO
+/****** Object:  Sequence [dbo].[TicketID_Sequence]    Script Date: 3/23/2024 1:02:04 PM ******/
+CREATE SEQUENCE [dbo].[TicketID_Sequence] 
+ AS [bigint]
+ START WITH 1
+ INCREMENT BY 1
+ MINVALUE -9223372036854775808
+ MAXVALUE 9223372036854775807
+ CACHE 
+GO
+/****** Object:  Table [dbo].[Department]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Department](
+	[DepartmentID] [int] NOT NULL,
+	[DName] [nchar](50) NULL,
+	[Description] [nchar](200) NULL,
+ CONSTRAINT [PK_Department1] PRIMARY KEY CLUSTERED 
+(
+	[DepartmentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MedicalRecord]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MedicalRecord](
+	[MedicalRecordID] [int] NOT NULL,
+	[FullName] [nchar](40) NOT NULL,
+	[DateOfBirth] [date] NOT NULL,
+	[Gender] [nchar](10) NOT NULL,
+	[Diagnosis] [nchar](100) NULL,
+	[File] [nchar](100) NULL,
+	[SocialInsuranceCode] [nchar](20) NULL,
+	[DateAdmitted] [date] NULL,
+	[DateDischarged] [date] NULL,
+	[Note] [nchar](100) NULL,
+	[Occupation] [nchar](200) NULL,
+	[Company] [nchar](200) NULL,
+	[TreatmentForm] [nchar](200) NULL,
+	[Ethnicity] [nchar](200) NULL,
+	[Address] [nchar](200) NULL,
+ CONSTRAINT [PK_MedicalRecord] PRIMARY KEY CLUSTERED 
+(
+	[MedicalRecordID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MedicalStaff]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MedicalStaff](
+	[StaffID] [int] NOT NULL,
+	[MSName] [nchar](40) NOT NULL,
+	[Title] [nchar](40) NULL,
+	[DateOfBirth] [date] NULL,
+	[Status] [nchar](20) NULL,
+	[StaffTypeID] [int] NULL,
+	[SpecialtyID] [int] NULL,
+	[RoomID] [int] NULL,
+	[Password] [nchar](100) NULL,
+ CONSTRAINT [PK_MedicalStaff] PRIMARY KEY CLUSTERED 
+(
+	[StaffID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Message]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Message](
+	[MessageID] [int] NOT NULL,
+	[Language] [nchar](20) NULL,
+	[Type] [nchar](20) NULL,
+	[Content] [nchar](200) NULL,
+ CONSTRAINT [PK_Message] PRIMARY KEY CLUSTERED 
+(
+	[MessageID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Patient]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Patient](
+	[PatientID] [int] NOT NULL,
+	[PName] [nchar](40) NOT NULL,
+	[DateOfBirth] [date] NOT NULL,
+	[Status] [nchar](20) NOT NULL,
+	[PriorityTypeID] [int] NULL,
+	[MedicalRecordID] [int] NULL,
+	[CCNumber] [nchar](12) NULL,
+ CONSTRAINT [PK_Patient] PRIMARY KEY CLUSTERED 
+(
+	[PatientID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PriorityType]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PriorityType](
+	[PriorityTypeID] [int] NOT NULL,
+	[PTName] [nchar](100) NOT NULL,
+	[Description] [nchar](100) NULL,
+ CONSTRAINT [PK_PriorityType] PRIMARY KEY CLUSTERED 
+(
+	[PriorityTypeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Room]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Room](
+	[RoomID] [int] NOT NULL,
+	[RName] [nchar](40) NULL,
+	[Status] [nchar](20) NULL,
+	[SpecialtyID] [int] NULL,
+	[DepartmentID] [int] NULL,
+	[RoomCode] [nchar](10) NULL,
+	[Floor] [int] NOT NULL,
+ CONSTRAINT [PK_Room] PRIMARY KEY CLUSTERED 
+(
+	[RoomID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Specialty]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Specialty](
+	[SpecialtyID] [int] NOT NULL,
+	[SName] [nchar](100) NULL,
+ CONSTRAINT [PK_Specialty] PRIMARY KEY CLUSTERED 
+(
+	[SpecialtyID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StaffType]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StaffType](
+	[StaffTypeID] [int] NOT NULL,
+	[STName] [nchar](40) NOT NULL,
+ CONSTRAINT [PK_StaffType] PRIMARY KEY CLUSTERED 
+(
+	[StaffTypeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ticket]    Script Date: 3/23/2024 1:02:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ticket](
+	[TicketID] [int] NOT NULL,
+	[TicketNumber] [int] NOT NULL,
+	[RegisterTime] [datetime] NOT NULL,
+	[PatientID] [int] NOT NULL,
+	[RoomID] [int] NULL,
+	[Status] [nchar](10) NOT NULL,
+ CONSTRAINT [PK_Ticket] PRIMARY KEY CLUSTERED 
+(
+	[TicketID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[MedicalRecord] ADD  CONSTRAINT [DF_MedicalRecord_MedicalRecordID]  DEFAULT (NEXT VALUE FOR [MedicalRecordID_Sequence]) FOR [MedicalRecordID]
+GO
+ALTER TABLE [dbo].[Patient] ADD  CONSTRAINT [DF_Patient_PatientID]  DEFAULT (NEXT VALUE FOR [PatientID_Sequence]) FOR [PatientID]
+GO
+ALTER TABLE [dbo].[Room] ADD  CONSTRAINT [DF_Room_RoomID]  DEFAULT (NEXT VALUE FOR [RoomID_Sequence]) FOR [RoomID]
+GO
+ALTER TABLE [dbo].[Ticket] ADD  CONSTRAINT [DF_Ticket_TicketID]  DEFAULT (NEXT VALUE FOR [TicketID_Sequence]) FOR [TicketID]
+GO
+ALTER TABLE [dbo].[MedicalStaff]  WITH CHECK ADD  CONSTRAINT [FK_MedicalStaff_Room] FOREIGN KEY([RoomID])
+REFERENCES [dbo].[Room] ([RoomID])
+GO
+ALTER TABLE [dbo].[MedicalStaff] CHECK CONSTRAINT [FK_MedicalStaff_Room]
+GO
+ALTER TABLE [dbo].[MedicalStaff]  WITH CHECK ADD  CONSTRAINT [FK_MedicalStaff_Specialty] FOREIGN KEY([SpecialtyID])
+REFERENCES [dbo].[Specialty] ([SpecialtyID])
+GO
+ALTER TABLE [dbo].[MedicalStaff] CHECK CONSTRAINT [FK_MedicalStaff_Specialty]
+GO
+ALTER TABLE [dbo].[MedicalStaff]  WITH CHECK ADD  CONSTRAINT [FK_MedicalStaff_StaffType] FOREIGN KEY([StaffTypeID])
+REFERENCES [dbo].[StaffType] ([StaffTypeID])
+GO
+ALTER TABLE [dbo].[MedicalStaff] CHECK CONSTRAINT [FK_MedicalStaff_StaffType]
+GO
+ALTER TABLE [dbo].[Patient]  WITH CHECK ADD  CONSTRAINT [FK_Patient_MedicalRecord] FOREIGN KEY([MedicalRecordID])
+REFERENCES [dbo].[MedicalRecord] ([MedicalRecordID])
+GO
+ALTER TABLE [dbo].[Patient] CHECK CONSTRAINT [FK_Patient_MedicalRecord]
+GO
+ALTER TABLE [dbo].[Patient]  WITH CHECK ADD  CONSTRAINT [FK_Patient_PriorityType] FOREIGN KEY([PriorityTypeID])
+REFERENCES [dbo].[PriorityType] ([PriorityTypeID])
+GO
+ALTER TABLE [dbo].[Patient] CHECK CONSTRAINT [FK_Patient_PriorityType]
+GO
+ALTER TABLE [dbo].[Room]  WITH CHECK ADD  CONSTRAINT [FK_Room_Department] FOREIGN KEY([DepartmentID])
+REFERENCES [dbo].[Department] ([DepartmentID])
+GO
+ALTER TABLE [dbo].[Room] CHECK CONSTRAINT [FK_Room_Department]
+GO
+ALTER TABLE [dbo].[Room]  WITH CHECK ADD  CONSTRAINT [FK_Room_Specialty] FOREIGN KEY([SpecialtyID])
+REFERENCES [dbo].[Specialty] ([SpecialtyID])
+GO
+ALTER TABLE [dbo].[Room] CHECK CONSTRAINT [FK_Room_Specialty]
+GO
+ALTER TABLE [dbo].[Ticket]  WITH CHECK ADD  CONSTRAINT [FK_Ticket_Patient] FOREIGN KEY([PatientID])
+REFERENCES [dbo].[Patient] ([PatientID])
+GO
+ALTER TABLE [dbo].[Ticket] CHECK CONSTRAINT [FK_Ticket_Patient]
+GO
+ALTER TABLE [dbo].[Ticket]  WITH CHECK ADD  CONSTRAINT [FK_Ticket_RoomID] FOREIGN KEY([RoomID])
+REFERENCES [dbo].[Room] ([RoomID])
+GO
+ALTER TABLE [dbo].[Ticket] CHECK CONSTRAINT [FK_Ticket_RoomID]
+GO
+USE [master]
+GO
+ALTER DATABASE [HospitalQMS] SET  READ_WRITE 
+GO

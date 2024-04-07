@@ -13,7 +13,7 @@
         <Grid HorizontalAlignment="Center" Height="380" Margin="0,45,0,0" VerticalAlignment="Top" Width="800">
             <TabControl HorizontalAlignment="Center" Height="380" VerticalAlignment="Center" Width="800">
                 <TabItem x:Name="tabHospitalize" Header="Quản lý Nhập viện">
-                    <StackPanel Height="330" Width="800" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Height="116" Width="619" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                         <Button x:Name="btnOldPatient" FontSize="30" Content="Bệnh nhân cũ" Height="100" Width="300" Padding="-1,1,1,1" Margin="5" BorderThickness="2,1,1,1" Click="btnOldPatient_Click"/>
                         <Button x:Name="btnNewPatient" FontSize="30" Content="Bệnh nhân mới" Height="100" Width="300" Padding="-1,1,1,1" Margin="5" BorderThickness="2,1,1,1" Click="btnNewPatient_Click"/>
                     </StackPanel>
@@ -21,8 +21,11 @@
                 <TabItem x:Name="tabDischarge" Header="Quản lý Ra viện">
                     
                 </TabItem>
-                <TabItem x:Name="tabPatient" Header="Quản lý Danh sách bệnh nhân">
-                    
+                <TabItem x:Name="tabPatient" Header="Quản lý Danh sách bệnh nhân" Height="22" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                    <StackPanel Height="116" Width="619" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Button x:Name="btnExport" FontSize="30" Content="File Bệnh nhân" Height="100" Width="300" Padding="-1,1,1,1" Margin="5" BorderThickness="2,1,1,1" Click="btnExport_Click"/>
+                        <Button x:Name="btnImport" FontSize="30" Content="Import Bệnh nhân" Height="100" Width="300" Padding="-1,1,1,1" Margin="5" BorderThickness="2,1,1,1" Click="btnImport_Click"/>
+                    </StackPanel>
                 </TabItem>
             </TabControl>
         </Grid>

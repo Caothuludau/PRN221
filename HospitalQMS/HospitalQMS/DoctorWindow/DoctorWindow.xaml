@@ -145,8 +145,8 @@
                 </TabItem>
                 <TabItem x:Name="tabNormalRoom" Header="Chuyển Phòng" IsEnabled="False">
                     <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="btnChangeRoom" Content="Tạo phiếu chỉ định" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnChangeRoom_Click"/>
-                        <Button x:Name="btnCancelNR" Content="Chuyển lại về phòng chờ" Width="140" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnCancelNR_Click"/>
+                        <Button x:Name="btnChangeRoom" Content="Chuyển sang phòng tiếp theo" Width="200" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnChangeRoom_Click"/>
+                        <Button x:Name="btnCancelNR" Content="Chuyển lại về phòng chờ" Width="200" Padding="-1,1,1,1" Margin="5,5,0,5" BorderThickness="2,1,1,1" Click="btnCancelNR_Click"/>
                     </StackPanel>
                 </TabItem>
             </TabControl>

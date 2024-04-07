@@ -19,10 +19,11 @@
                     <ListView x:Name="lvInRoom" Width="415" Margin="0,42,0,0">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="STT" Width="40" DisplayMemberBinding="{Binding Ticket.TicketNumber}"/>
+                                <GridViewColumn Header="STT" Width="40" DisplayMemberBinding="{Binding TicketNumber}"/>
                                 <GridViewColumn Header="Họ và tên" Width="200" DisplayMemberBinding="{Binding Pname}" />
-                                <GridViewColumn Header="Năm sinh" Width="100" DisplayMemberBinding="{Binding MedicalRecord.DateOfBirth}"/>
-                                <GridViewColumn Header="Ưu tiên" Width="70" DisplayMemberBinding="{Binding PriorityType.Pname}"/>
+                                <GridViewColumn Header="Năm sinh" Width="80" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                                <GridViewColumn Header="Ưu tiên" Width="100" DisplayMemberBinding="{Binding IsPriority}"/>
+                                <GridViewColumn Header="CCCD" Width="70" DisplayMemberBinding="{Binding Ccnumber}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -32,10 +33,11 @@
                     <ListView x:Name="lvOutRoom" Width="415" Margin="0,42,0,0">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="STT" Width="40" DisplayMemberBinding="{Binding Ticket.TicketNumber}"/>
+                                <GridViewColumn Header="STT" Width="40" DisplayMemberBinding="{Binding TicketNumber}"/>
                                 <GridViewColumn Header="Họ và tên" Width="200" DisplayMemberBinding="{Binding Pname}" />
-                                <GridViewColumn Header="Năm sinh" Width="100" DisplayMemberBinding="{Binding MedicalRecord.DateOfBirth}"/>
-                                <GridViewColumn Header="Ưu tiên" Width="70" DisplayMemberBinding="{Binding PriorityType.Pname}"/>
+                                <GridViewColumn Header="Năm sinh" Width="80" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                                <GridViewColumn Header="Ưu tiên" Width="100" DisplayMemberBinding="{Binding IsPriority}"/>
+                                <GridViewColumn Header="CCCD" Width="70" DisplayMemberBinding="{Binding Ccnumber}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

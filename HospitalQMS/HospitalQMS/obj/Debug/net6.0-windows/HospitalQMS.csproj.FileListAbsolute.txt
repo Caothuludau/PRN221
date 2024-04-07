@@ -83,3 +83,9 @@ D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\refint\Ho
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\HospitalQMS.pdb
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\HospitalQMS.genruntimeconfig.cache
 D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\obj\Debug\net6.0-windows\ref\HospitalQMS.dll
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\ClosedXML.dll
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\ExcelNumberFormat.dll
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\Irony.dll
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+D:\Ky7\PRNRepo\PRN221\HospitalQMS\HospitalQMS\bin\Debug\net6.0-windows\XLParser.dll
